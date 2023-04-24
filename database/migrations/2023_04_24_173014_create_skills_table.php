@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\Project;
+use App\Models\Level;
 use App\Models\Topic;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,10 +15,12 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('topic_projects', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
+            $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(Topic::class)->constrained();
-            $table->foreignIdFor(Project::class)->constrained();
-            $table->primary(['topic_id', 'project_id']);
+            $table->foreignIdFor(Level::class)->constrained();
+
+            $table->primary(['user_id', 'topic_id']);
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('topic_projects');
+        Schema::dropIfExists('skills');
     }
 };

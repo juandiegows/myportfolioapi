@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Client;
+use App\Models\Profession;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,10 +14,14 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('participants', function (Blueprint $table) {
+        Schema::create('work_experiences', function (Blueprint $table) {
+            $table->id();
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(Client::class)->constrained();
-            $table->primary(['user_id', 'client_id']);
+            $table->string('business', 100);
+            $table->text('description')->nullable();
+            $table->text('spanish_description')->nullable();
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
         });
     }
 
@@ -28,6 +32,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('participants');
+        Schema::dropIfExists('work_experiences');
     }
 };

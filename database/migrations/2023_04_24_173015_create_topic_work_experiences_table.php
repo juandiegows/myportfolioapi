@@ -1,6 +1,7 @@
 <?php
 
-use App\Models\Project;
+use App\Models\Topic;
+use App\Models\WorkExperience;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,11 +14,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('project_projects', function (Blueprint $table) {
-            $table->foreignIdFor(Project::class, 'principal_project_id')->constrained('projects');
-            $table->foreignIdFor(Project::class)->constrained();
-
-            $table->primary(['principal_project_id', 'project_Id']);
+        Schema::create('topic_work_experiences', function (Blueprint $table) {
+            $table->foreignIdFor(WorkExperience::class)->constrained();
+            $table->foreignIdFor(Topic::class)->constrained();
+            $table->primary(['topic_id', 'work_experience_id']);
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('project_projects');
+        Schema::dropIfExists('topic_work_experiences');
     }
 };
