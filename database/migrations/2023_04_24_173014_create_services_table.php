@@ -13,16 +13,14 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('educations', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
-            $table->string('entity', 200);
-            $table->string('title', 200);
-            $table->string('spanish_title', 200)->nullable();
-            $table->text('description')->nullable();
-            $table->text('spanish_description')->nullable();
-            $table->date('start_date');
-            $table->date('end_date')->nullable();
+            $table->string('title', 250)->unique();
+            $table->string('spanish_title', 250)->unique();
+            $table->text('description');
+            $table->text('spanish_description');
+            $table->tinyInteger('active')->default(1);
         });
     }
 
@@ -33,6 +31,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('educations');
+        Schema::dropIfExists('services');
     }
 };

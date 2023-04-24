@@ -1,11 +1,12 @@
 <?php
 
+use App\Models\Project;
+use App\Models\Topic;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,11 +14,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projecttopic', function (Blueprint $table) {
-            $table->integer('TopicId');
-            $table->integer('ProjectId')->index('project_project_topic_idx');
-
-            $table->primary(['TopicId', 'ProjectId']);
+        Schema::create('topic_projects', function (Blueprint $table) {
+            $table->foreignIdFor(Topic::class)->constrained();
+            $table->foreignIdFor(Project::class)->constrained();
+            $table->primary(['topic_id', 'project_id']);
         });
     }
 

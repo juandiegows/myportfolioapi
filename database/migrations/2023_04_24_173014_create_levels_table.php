@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,11 +12,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projecttoproject', function (Blueprint $table) {
-            $table->integer('PrincipalProojecId');
-            $table->integer('ProjectId')->index('Project_second_idx');
-
-            $table->primary(['PrincipalProojecId', 'ProjectId']);
+        Schema::create('levels', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 45)->unique();
+            $table->string('spanish_name', 45)->unique();
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projecttoproject');
+        Schema::dropIfExists('levels');
     }
 };

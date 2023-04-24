@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +13,11 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('professions', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 200);
-            $table->string('name_spanish', 200);
+        Schema::create('project_projects', function (Blueprint $table) {
+            $table->foreignIdFor(Project::class, 'principal_project_id')->constrained();
+            $table->foreignIdFor(Project::class)->constrained();
+
+            $table->primary(['principal_project_id', 'project_Id']);
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('profession');
+        Schema::dropIfExists('project_projects');
     }
 };

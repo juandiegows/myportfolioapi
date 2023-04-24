@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Profession;
+use App\Models\Image;
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -14,10 +14,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('profession_user', function (Blueprint $table) {
-            $table->foreignIdFor(Profession::class)->constrained();
-            $table->foreignIdFor(User::class)->constrained();
-            $table->primary(['profession_id', 'user_id']);
+        Schema::create('project_images', function (Blueprint $table) {
+            $table->foreignIdFor(Image::class)->constrained();
+            $table->foreignIdFor(Project::class)->constrained();
+            $table->primary(['image_id', 'project_id']);
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('professionuser');
+        Schema::dropIfExists('project_images');
     }
 };

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Client;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,11 +14,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('project_images', function (Blueprint $table) {
-            $table->integer('ProjectId');
-            $table->integer('ImageId')->index('image_project_idx');
-
-            $table->primary(['ProjectId', 'ImageId']);
+        Schema::create('participants', function (Blueprint $table) {
+            $table->foreignIdFor(User::class)->constrained();
+            $table->foreignId(Client::class)->constrained();
+            $table->primary(['user_id', 'client_id']);
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('imageproject');
+        Schema::dropIfExists('participants');
     }
 };
