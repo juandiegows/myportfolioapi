@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     ];
 
-    protected $appends = ['professions', 'social_medias', 'educations'];
+    protected $appends = ['professions', 'social_medias'];
 
     public function getProfessionsAttribute()
     {
@@ -60,10 +60,7 @@ class User extends Authenticatable
         return $this->social_medias()->get();
     }
 
-    public function getEducationsAttribute()
-    {
-        return $this->educations()->get();
-    }
+
     public function professions()
     {
         return $this->belongsToMany(Profession::class, ProfessionUser::class);

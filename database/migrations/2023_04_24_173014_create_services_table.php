@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('spanish_title', 250)->unique();
             $table->text('description');
             $table->text('spanish_description');
-            $table->tinyInteger('active')->default(1);
+            $table->boolean('active')->default(true);
         });
     }
 
