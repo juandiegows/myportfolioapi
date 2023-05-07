@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
                 ServiceSeeder::class,
                 ClientSeeder::class,
                 TopicSeeder::class,
-                ClientTopicSeeder::class
+                ClientTopicSeeder::class,
+                LevelSeeder::class
             ]
         );
     }
