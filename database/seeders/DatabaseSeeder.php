@@ -22,7 +22,10 @@ class DatabaseSeeder extends Seeder
             [
                 UserSeeder::class,
                 ProfessionSeeder::class,
-                ProfessionUserSeeder::class
+                ProfessionUserSeeder::class,
+                TypeTopicSeeder::class,
+                MediaSocialSeeder::class,
+                MediaSocialUserSeeder::class
             ]
         );
     }

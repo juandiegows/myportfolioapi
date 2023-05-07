@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Profession;
+use App\Models\ProfessionUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'professions'
     ];
 
     /**
@@ -40,5 +43,28 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_principal' => 'boolean',
+        'active' => 'boolean',
+
     ];
+
+    protected $appends = ['professions', 'social_medias'];
+
+    public function getProfessionsAttribute()
+    {
+        return $this->professions()->get();
+    }
+    public function getSocialMediasAttribute()
+    {
+        return $this->social_medias()->get();
+    }
+    public function professions()
+    {
+        return $this->belongsToMany(Profession::class, ProfessionUser::class);
+    }
+
+    public function social_medias()
+    {
+        return $this->hasMany(SocialMediaUser::class);
+    }
 }
