@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('name', 200);
             $table->text('spanish_description');
             $table->text('description');
+            $table->text('url_logo');
             $table->string('link_site', 300);
             $table->integer('year');
         });

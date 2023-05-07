@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
                 MediaSocialSeeder::class,
                 MediaSocialUserSeeder::class,
                 EducationSeeder::class,
-                ServiceSeeder::class
+                ServiceSeeder::class,
+                ClientSeeder::class
             ]
         );
     }

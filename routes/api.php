@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SocialMediaController;
@@ -32,4 +33,8 @@ Route::controller(EducationController::class)->group(function () {
 
 Route::controller(ServiceController::class)->group(function () {
     Route::get('services', 'index');
+});
+
+Route::controller(ClientController::class)->group(function () {
+    Route::get('client', 'index');
 });
