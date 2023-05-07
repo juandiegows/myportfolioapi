@@ -26,6 +26,27 @@ class TypeTopicSeeder extends Seeder
             [
                 "spanish_name" => "Libreria",
                 "name" => "Libreria"
+            ],
+            [
+                "spanish_name" => "lenguajes de hojas de estilo",
+                "name" => "style sheet languages"
+            ],
+            [
+                "spanish_name" => "Lenguaje de etiquetas de hipertexto",
+                "name" => "HyperText Markup Language"
+            ],
+            [
+                "spanish_name" => "paradigma de programación",
+                "name" => "programming paradigm"
+            ]
+            ,
+            [
+                "spanish_name" => "Framework",
+                "name" => "Framework"
+            ],
+            [
+                "spanish_name" => "Base de datos",
+                "name" => "Database"
             ]
         ]);
     }
