@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Education;
 use App\Models\Profession;
 use App\Models\ProfessionUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -48,7 +49,7 @@ class User extends Authenticatable
 
     ];
 
-    protected $appends = ['professions', 'social_medias'];
+    protected $appends = ['professions', 'social_medias', 'educations'];
 
     public function getProfessionsAttribute()
     {
@@ -57,6 +58,11 @@ class User extends Authenticatable
     public function getSocialMediasAttribute()
     {
         return $this->social_medias()->get();
+    }
+
+    public function getEducationsAttribute()
+    {
+        return $this->educations()->get();
     }
     public function professions()
     {
@@ -67,4 +73,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(SocialMediaUser::class);
     }
+
+    public function educations()
+    {
+        return $this->hasMany(Education::class);
+    }
+
 }

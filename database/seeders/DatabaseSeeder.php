@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
                 ProfessionUserSeeder::class,
                 TypeTopicSeeder::class,
                 MediaSocialSeeder::class,
-                MediaSocialUserSeeder::class
+                MediaSocialUserSeeder::class,
+                EducationSeeder::class
             ]
         );
     }

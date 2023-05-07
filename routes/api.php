@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -22,4 +23,8 @@ Route::controller(UserController::class)->group(function () {
 
 Route::controller(SocialMediaController::class)->group(function () {
     Route::get('social-media', 'index');
+});
+
+Route::controller(EducationController::class)->group(function () {
+    Route::get('education', 'index');
 });
