@@ -4,6 +4,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\TopicController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,4 +38,8 @@ Route::controller(ServiceController::class)->group(function () {
 
 Route::controller(ClientController::class)->group(function () {
     Route::get('client', 'index');
+});
+
+Route::controller(TopicController::class)->group(function () {
+    Route::get('topic', 'index');
 });

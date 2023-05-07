@@ -18,6 +18,14 @@ class TypeTopicSeeder extends Seeder
             [
                 "spanish_name" => "Lenguajes",
                 "name" => "Languages"
+            ],
+            [
+                "spanish_name" => "Patrones de diseño",
+                "name" => "Design patterns"
+            ],
+            [
+                "spanish_name" => "Libreria",
+                "name" => "Libreria"
             ]
         ]);
     }
