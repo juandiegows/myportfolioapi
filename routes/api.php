@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkExperienceController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -37,9 +39,18 @@ Route::controller(ServiceController::class)->group(function () {
 });
 
 Route::controller(ClientController::class)->group(function () {
-    Route::get('client', 'index');
+    Route::get('clients', 'index');
 });
 
 Route::controller(TopicController::class)->group(function () {
-    Route::get('topic', 'index');
+    Route::get('topics', 'index');
+});
+
+
+Route::controller(WorkExperienceController::class)->group(function () {
+    Route::get('work-experiences', 'index');
+});
+
+Route::controller(ProfessionController::class)->group(function () {
+    Route::get('professions', 'index');
 });
