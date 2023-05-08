@@ -47,6 +47,14 @@ class TypeTopicSeeder extends Seeder
             [
                 "spanish_name" => "Base de datos",
                 "name" => "Database"
+            ],
+            [
+                "spanish_name" => "IDE",
+                "name" => "IDE"
+            ],
+            [
+                "spanish_name" => "buenas prácticas",
+                "name" => "good practices"
             ]
         ]);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TopicController;
+use App\Http\Controllers\TypeTopicController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkExperienceController;
 use App\Models\User;
@@ -53,4 +54,8 @@ Route::controller(WorkExperienceController::class)->group(function () {
 
 Route::controller(ProfessionController::class)->group(function () {
     Route::get('professions', 'index');
+});
+
+Route::controller(TypeTopicController::class)->group(function () {
+    Route::get('type-topics', 'index');
 });

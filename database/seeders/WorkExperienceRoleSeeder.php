@@ -8,9 +8,7 @@ use Illuminate\Database\Seeder;
 
 class WorkExperienceRoleSeeder extends Seeder
 {
-    /**
-     *           $table->primary(['work_experience_id', 'profession_id']);
-     */
+
     public function run(): void
     {
         WorkExperienceRole::insert([
