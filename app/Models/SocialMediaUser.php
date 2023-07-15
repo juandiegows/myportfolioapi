@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class SocialMediaUser extends Model
 {
@@ -18,7 +17,7 @@ class SocialMediaUser extends Model
     protected $appends = ['social_media'];
     public function getSocialMediaAttribute()
     {
-        return $this->social_media()->get();
+        return $this->social_media()->get()->first();
     }
     protected $casts = [
         "is_principal" => "boolean"

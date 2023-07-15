@@ -9,8 +9,6 @@ use App\Http\Controllers\TopicController;
 use App\Http\Controllers\TypeTopicController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkExperienceController;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +21,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
 Route::controller(UserController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('/users', 'index');
+    Route::get('/users/{user}', 'show');
 });
 
 Route::controller(SocialMediaController::class)->group(function () {

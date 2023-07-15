@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(SocialMedia::class)->constrained();
             $table->string('link', 200)->unique();
-            $table->tinyInteger('is_principal')->default(1);
+            $table->boolean('is_principal')->default(1);
         });
     }
 
