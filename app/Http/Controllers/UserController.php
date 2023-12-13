@@ -30,4 +30,61 @@ class UserController extends Controller
             return response()->json(new Response($user, $meta), 404);
         }
     }
+
+    public function services($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::where('id', $user)->first();
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+        if ($user) {
+            return response()->json(new Response($user->services, null));
+        } else {
+            $meta = new Meta();
+            $meta->code = 404;
+            $meta->message = "User not found";
+            $meta->message_spanish = "usuario no encontrado";
+
+            return response()->json(new Response($user, $meta), 404);
+        }
+    }
+
+    public function socialMedias($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::where('id', $user)->first();
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+        if ($user) {
+            return response()->json(new Response($user->social_medias, null));
+        } else {
+            $meta = new Meta();
+            $meta->code = 404;
+            $meta->message = "User not found";
+            $meta->message_spanish = "usuario no encontrado";
+
+            return response()->json(new Response($user, $meta), 404);
+        }
+    }
+
+        public function professions($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::where('id', $user)->first();
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+        if ($user) {
+            return response()->json(new Response($user->professions, null));
+        } else {
+            $meta = new Meta();
+            $meta->code = 404;
+            $meta->message = "User not found";
+            $meta->message_spanish = "usuario no encontrado";
+
+            return response()->json(new Response($user, $meta), 404);
+        }
+    }
 }

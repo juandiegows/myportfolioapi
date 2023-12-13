@@ -25,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index');
     Route::get('/users/{user}', 'show');
+    Route::get('/users/{user}/services', 'services');
+    Route::get('/users/{user}/social-medias', 'socialMedias');
+    Route::get('/users/{user}/professions', 'professions');
 });
 
 Route::controller(SocialMediaController::class)->group(function () {
