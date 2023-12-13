@@ -16,27 +16,27 @@ class MediaSocialSeeder extends Seeder
         SocialMedia::insert([
             [
                 "name" => "Facebook",
-                "link_image" => "img/FB.svg"
+                "link_image" => "img/SocialMedia/FB.svg"
             ],
             [
                 "name" => "GitHub",
-                "link_image" => "img/GitHub.svg"
+                "link_image" => "img/SocialMedia/GitHub.svg"
             ],
             [
                 "name" => "Instagram",
-                "link_image" => "img/Instagram.svg"
+                "link_image" => "img/SocialMedia/Instagram.svg"
             ],
             [
                 "name" => "Linked",
-                "link_image" => "img/Linked.svg"
+                "link_image" => "img/SocialMedia/Linked.svg"
             ],
             [
                 "name" => "Twitter",
-                "link_image" => "img/twitter.svg"
+                "link_image" => "img/SocialMedia/twitter.svg"
             ],
             [
                 "name" => "YouTube",
-                "link_image" => "img/YouTube.svg"
+                "link_image" => "img/SocialMedia/YouTube.svg"
             ]
         ]);
     }
