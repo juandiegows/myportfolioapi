@@ -28,6 +28,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/users/{user}/services', 'services');
     Route::get('/users/{user}/social-medias', 'socialMedias');
     Route::get('/users/{user}/professions', 'professions');
+    Route::get('/users/{user}/clients', 'clients');
 });
 
 Route::controller(SocialMediaController::class)->group(function () {

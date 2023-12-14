@@ -69,7 +69,7 @@ class UserController extends Controller
         }
     }
 
-        public function professions($user)
+    public function professions($user)
     {
         if (is_numeric($user)) {
             $user = User::where('id', $user)->first();
@@ -78,6 +78,25 @@ class UserController extends Controller
         }
         if ($user) {
             return response()->json(new Response($user->professions, null));
+        } else {
+            $meta = new Meta();
+            $meta->code = 404;
+            $meta->message = "User not found";
+            $meta->message_spanish = "usuario no encontrado";
+
+            return response()->json(new Response($user, $meta), 404);
+        }
+    }
+
+    public function clients($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::where('id', $user)->first();
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+        if ($user) {
+            return response()->json(new Response($user->clients, null));
         } else {
             $meta = new Meta();
             $meta->code = 404;
