@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ClientResource;
 use App\Models\Meta;
 use App\Models\Response;
 use App\Models\User;
@@ -25,7 +26,7 @@ class UserController extends Controller
             $meta = new Meta();
             $meta->code = 404;
             $meta->message = "User not found";
-            $meta->message_spanish = "usuario no encontrado";
+            $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
         }
@@ -44,7 +45,7 @@ class UserController extends Controller
             $meta = new Meta();
             $meta->code = 404;
             $meta->message = "User not found";
-            $meta->message_spanish = "usuario no encontrado";
+            $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
         }
@@ -63,7 +64,7 @@ class UserController extends Controller
             $meta = new Meta();
             $meta->code = 404;
             $meta->message = "User not found";
-            $meta->message_spanish = "usuario no encontrado";
+            $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
         }
@@ -82,7 +83,7 @@ class UserController extends Controller
             $meta = new Meta();
             $meta->code = 404;
             $meta->message = "User not found";
-            $meta->message_spanish = "usuario no encontrado";
+            $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
         }
@@ -96,14 +97,14 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            return response()->json(new Response($user->clients, null));
+            return response()->json(new Response(ClientResource::collection($user->clients), null));
         } else {
             $meta = new Meta();
             $meta->code = 404;
             $meta->message = "User not found";
-            $meta->message_spanish = "usuario no encontrado";
+            $meta->messageSpanish = "usuario no encontrado";
 
-            return response()->json(new Response($user, $meta), 404);
+            return response()->json(new Response(null, $meta), 404);
         }
     }
 }

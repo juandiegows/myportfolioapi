@@ -21,4 +21,14 @@ class Client extends Model
     {
         return $this->hasMany(ClientTopic::class);
     }
+
+    public function participants()
+    {
+        return $this->belongsToMany(User::class, Participant::class);
+    }
+
+    public function topicsAll()
+    {
+        return $this->belongsToMany(Topic::class, ClientTopic::class);
+    }
 }
