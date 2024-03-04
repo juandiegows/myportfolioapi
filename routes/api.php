@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SocialMediaController;
@@ -29,6 +30,12 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/users/{user}/social-medias', 'socialMedias');
     Route::get('/users/{user}/professions', 'professions');
     Route::get('/users/{user}/clients', 'clients');
+});
+
+
+
+Route::controller(MessageController::class)->group(function () {
+    Route::post('message', 'store');
 });
 
 Route::controller(SocialMediaController::class)->group(function () {
