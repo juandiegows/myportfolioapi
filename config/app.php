@@ -122,6 +122,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'MAIL' => env('MAIL'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -156,7 +157,7 @@ return [
 
     'providers' => [
 
-            /*
+        /*
              * Laravel Framework Service Providers...
              */
         Illuminate\Auth\AuthServiceProvider::class,
@@ -182,16 +183,16 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-            /*
+        /*
              * Package Service Providers...
              */
 
-            /*
+        /*
              * Application Service Providers...
              */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-            // App\Providers\BroadcastServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

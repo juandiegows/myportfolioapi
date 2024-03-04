@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageCreated;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Config;
 
 class MessageController extends Controller
 {
@@ -19,6 +22,8 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+
+
 
         try {
             $validator = Validator::make($request->all(), [
@@ -41,6 +46,8 @@ class MessageController extends Controller
 
 
             $message =  Message::create($request->all());
+            Mail::to(Config::get('app.MAIL'))
+                ->send(new MessageCreated($message));
             return response()->json([
                 'meta' => [
                     'href' => $request->url(),
