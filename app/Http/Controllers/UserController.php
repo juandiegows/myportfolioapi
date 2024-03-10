@@ -97,7 +97,7 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            return response()->json(new Response(ClientResource::collection($user->clients), null));
+            return response()->json(new Response(ClientResource::collection($user->clients), new Meta(200, "Ok")));
         } else {
             $meta = new Meta();
             $meta->code = 404;

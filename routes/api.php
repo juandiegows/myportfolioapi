@@ -25,11 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index');
-    Route::get('/users/{user}', 'show');
-    Route::get('/users/{user}/services', 'services');
-    Route::get('/users/{user}/social-medias', 'socialMedias');
-    Route::get('/users/{user}/professions', 'professions');
-    Route::get('/users/{user}/clients', 'clients');
+    Route::get('/user/{user}', 'show');
+    Route::get('/user/{user}/services', 'services');
+    Route::get('/user/{user}/social-medias', 'socialMedias');
+    Route::get('/user/{user}/professions', 'professions');
+    Route::get('/user/{user}/clients', 'clients');
 });
 
 
