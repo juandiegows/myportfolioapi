@@ -15,10 +15,15 @@ class Topic extends Model
 
     public function getTypeTopicAttribute()
     {
-        return $this->type_topic()->get();
+        return $this->typeTopic()->get();
     }
-    public function type_topic()
+    public function typeTopic()
     {
         return $this->BelongsTo(TypeTopic::class);
+    }
+
+    public function topic()
+    {
+        return $this->BelongsTo(Topic::class);
     }
 }

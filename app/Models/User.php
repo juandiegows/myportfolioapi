@@ -66,6 +66,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Profession::class, ProfessionUser::class);
     }
 
+    public function skills()
+    {
+        return $this->belongsToMany(Topic::class, Skill::class);
+    }
+
     public function social_medias()
     {
         return $this->hasMany(SocialMediaUser::class);
@@ -76,10 +81,12 @@ class User extends Authenticatable
         return $this->hasMany(Education::class);
     }
 
-    public function services(){
+    public function services()
+    {
         return $this->hasMany(Service::class);
     }
-    public function clients(){
+    public function clients()
+    {
         return $this->belongsToMany(Client::class, Participant::class);
     }
 }
