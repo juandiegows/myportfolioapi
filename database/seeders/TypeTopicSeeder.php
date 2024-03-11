@@ -14,7 +14,7 @@ class TypeTopicSeeder extends Seeder
     public function run(): void
     {
 
-        TypeTopic::insert([
+        TypeTopic::insertOrIgnore([
             [
                 "spanish_name" => "Lenguajes",
                 "name" => "Languages"
@@ -38,8 +38,7 @@ class TypeTopicSeeder extends Seeder
             [
                 "spanish_name" => "paradigma de programación",
                 "name" => "programming paradigm"
-            ]
-            ,
+            ],
             [
                 "spanish_name" => "Framework",
                 "name" => "Framework"
@@ -55,7 +54,23 @@ class TypeTopicSeeder extends Seeder
             [
                 "spanish_name" => "buenas prácticas",
                 "name" => "good practices"
-            ]
+            ],
+            [
+                "spanish_name" => "Sistema operativos",
+                "name" => "Operating systems"
+            ],
+            [
+                "spanish_name" => "editor de codigo",
+                "name" => "code editor"
+            ],
+            [
+                "spanish_name" => "Entorno de ejecución",
+                "name" => "Execution environment"
+            ],
+            [
+                "spanish_name" => "control de versiones",
+                "name" => "version control"
+            ],
         ]);
     }
 }

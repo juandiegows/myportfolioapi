@@ -168,7 +168,55 @@ class TopicSeeder extends Seeder
                 'link_image' => null,
                 'spanish_description' => "Es un conjunto de técnicas y estrategias utilizadas para optimizar un sitio web y mejorar su visibilidad en los resultados de los motores de búsqueda. ",
                 'description' => "It is a set of techniques and strategies used to optimize a website and improve its visibility in search engine results."
-            ]
+            ],
+            [
+                'type_topic_id' => 8,
+                'name' => 'SQLite',
+                'spanish_name' => 'SQLite',
+                'link_image' => 'img/topics/sqlite.svg',
+                'spanish_description' => "Es un motor de base de datos relacional ligero y sin servidor, utilizado para almacenar y administrar datos localmente. Fácil de integrar en aplicaciones, proporciona soporte para transacciones, consultas complejas y seguridad de datos. Compatible con la mayoría de los sistemas operativos.",
+                'description' => "It is a lightweight, serverless relational database engine used to store and manage data locally. Easy to integrate into applications, provides support for transactions, complex queries and data security. Compatible with most operating systems."
+            ],
+            [
+                'type_topic_id' => 9,
+                'name' => 'Figma',
+                'spanish_name' => 'Figma',
+                'link_image' => 'img/topics/figma.svg',
+                'spanish_description' => "Es una herramienta basada en la nube para el diseño de UI/UX. Permite la colaboración en tiempo real y la creación de diseños interactivos y prototipos. Proporciona herramientas de diseño vectorial, bibliotecas de componentes reutilizables y una plataforma de colaboración en equipo.",
+                'description' => "It's a cloud-based tool for UI/UX design. It allows real-time collaboration and the creation of interactive designs and prototypes. It provides vector design tools, reusable component libraries, and a team collaboration platform."
+            ],
+            [
+                'type_topic_id' => 11,
+                'name' => 'Ubuntu',
+                'spanish_name' => 'Ubuntu',
+                'link_image' => 'img/topics/ubuntu.svg',
+                'spanish_description' => "Es un sistema operativo de código abierto y gratuito, basado en Linux. Fácil de instalar y utilizar, viene con una amplia gama de aplicaciones y herramientas preinstaladas. Popular entre los usuarios de Linux por su facilidad de uso y soporte comunitario activo.",
+                'description' => "It's a free and open-source operating system based on Linux. Easy to install and use, it comes with a wide range of pre-installed applications and tools. Popular among Linux users for its ease of use and active community support."
+            ],
+            [
+                'type_topic_id' => 12,
+                'name' => 'Visual Studio Code',
+                'spanish_name' => 'Visual Studio Code',
+                'link_image' => 'img/topics/visual studio code.svg',
+                'spanish_description' => "Es un editor de código gratuito y multiplataforma de Microsoft. Tiene herramientas avanzadas como Git y autocompletado de código. Es popular entre los desarrolladores por su facilidad de uso y extensiones disponibles.",
+                'description' => "It's a free, multi-platform code editor from Microsoft. It has advanced tools like Git and code autocompletion. It's popular among developers for its ease of use and available extensions."
+            ],
+            [
+                'type_topic_id' => 13,
+                'name' => 'Node.js',
+                'spanish_name' => 'Node.js',
+                'link_image' => 'img/topics/nodejs.svg',
+                'spanish_description' => "Es un entorno de tiempo de ejecución de JavaScript construido sobre el motor V8 de Google Chrome. Permite a los desarrolladores ejecutar JavaScript en el lado del servidor para crear aplicaciones web escalables y de alto rendimiento. Node.js cuenta con una gran comunidad y un ecosistema rico en bibliotecas y herramientas.",
+                'description' => "It is a JavaScript runtime environment built on the Google Chrome V8 engine. It allows developers to run JavaScript on the server-side to create scalable and high-performance web applications. Node.js has a large community and a rich ecosystem of libraries and tools."
+            ],
+            [
+                'type_topic_id' => 14,
+                'name' => 'Git',
+                'spanish_name' => 'Git',
+                'link_image' => 'img/topics/git.svg',
+                'spanish_description' => "Es un sistema de control de versiones de software utilizado para rastrear los cambios en el código fuente durante el desarrollo de software. Git es altamente eficiente y proporciona una mayor colaboración en equipo y seguimiento de cambios en el código fuente. Es ampliamente utilizado en la industria del desarrollo de software.",
+                'description' => "It is a software version control system used to track changes in source code during software development. Git is highly efficient and provides greater team collaboration and tracking of changes in source code. It is widely used in the software development industry."
+            ],
         ]);
     }
 }

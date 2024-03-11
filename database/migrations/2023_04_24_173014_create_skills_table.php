@@ -18,7 +18,7 @@ return new class extends Migration {
         Schema::create('skills', function (Blueprint $table) {
             $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(Topic::class)->constrained();
-            $table->foreignIdFor(Level::class)->constrained();
+            $table->foreignIdFor(Level::class)->nullable()->constrained();
 
             $table->primary(['user_id', 'topic_id']);
         });

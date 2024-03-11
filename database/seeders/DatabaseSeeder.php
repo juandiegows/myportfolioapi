@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
                 WorkExperienceSeeder::class,
                 WorkExperienceRoleSeeder::class,
                 TopicWorkExperienceSeeder::class,
-                ParticipantSeeder::class
+                ParticipantSeeder::class,
+                SkillSeeder::class,
             ]
         );
     }
