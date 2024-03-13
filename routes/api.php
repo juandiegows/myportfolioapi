@@ -31,6 +31,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/user/{user}/professions', 'professions');
     Route::get('/user/{user}/clients', 'clients');
     Route::get('/user/{user}/skills', 'skills');
+    Route::get('/user/{user}/works', 'works');
 });
 
 

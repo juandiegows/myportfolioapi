@@ -89,4 +89,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Client::class, Participant::class);
     }
+
+    public function works()
+    {
+        return $this->hasMany(WorkExperience::class);
+    }
 }

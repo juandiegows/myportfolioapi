@@ -12,7 +12,7 @@ class WorkExperienceSeeder extends Seeder
 
     public function run(): void
     {
-        WorkExperience::insert([
+        WorkExperience::insertOrIgnore([
             [
                 'user_id' => 1,
                 'business' => 'Lazos de dignidad',

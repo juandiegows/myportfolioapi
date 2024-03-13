@@ -10,22 +10,14 @@ class WorkExperience extends Model
 {
     use HasFactory;
 
-    protected $casts = ['with_certificate' => 'boolean'];
-    protected $appends = ['professions', 'topics'];
-    public function getProfessionsAttribute()
-    {
-        return $this->professions()->get();
-    }
+    protected $appends = ['topics'];
+ 
 
-    public function getTopicsAttribute()
-    {
-        return $this->topics()->get();
-    }
-    public function professions()
-    {
-        return $this->belongsToMany(Profession::class, WorkExperienceRole::class);
-    }
 
+    public function profession()
+    {
+        return $this->belongsTo(Profession::class);
+    }
     public function topics()
     {
         return $this->belongsToMany(Topic::class, TopicWorkExperience::class);
