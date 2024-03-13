@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('business', 100);
             $table->text('description')->nullable();
             $table->text('spanish_description')->nullable();
-            $table->boolean('with_certificate')->default(false);
             $table->text('certificate_url')->nullable();
             $table->date('start_date');
             $table->date('end_date')->nullable();
