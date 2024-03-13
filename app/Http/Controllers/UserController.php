@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ClientResource;
+use App\Http\Resources\EducationResource;
 use App\Http\Resources\TopicResource;
 use App\Http\Resources\WorkResource;
 use App\Models\Meta;
@@ -139,6 +140,25 @@ class UserController extends Controller
         }
         if ($user) {
             return response()->json(new Response(WorkResource::collection($user->works), new Meta(200, "Ok")));
+        } else {
+            $meta = new Meta();
+            $meta->code = 404;
+            $meta->message = "User not found";
+            $meta->messageSpanish = "usuario no encontrado";
+
+            return response()->json(new Response(null, $meta), 404);
+        }
+    }
+
+    public function educations($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::where('id', $user)->first();
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+        if ($user) {
+            return response()->json(new Response(EducationResource::collection($user->educations), new Meta(200, "Ok")));
         } else {
             $meta = new Meta();
             $meta->code = 404;
