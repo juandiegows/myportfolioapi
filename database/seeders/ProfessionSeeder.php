@@ -50,7 +50,11 @@ class ProfessionSeeder extends Seeder
                 [
                     "name" => "UX/UI Designer",
                     "name_spanish" => "Diseñador UX/UI"
-                ]
+                ],
+                [
+                    "name" => "SENA instructor",
+                    "name_spanish" => "instructor SENA"
+                ],
             ]
 
         );
