@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('entity', 200);
             $table->string('title', 200);
             $table->string('spanish_title', 200)->nullable();
+            $table->string('title_education', 200)->nullable();
+            $table->string('spanish_title_education', 200)->nullable();
             $table->text('description')->nullable();
             $table->text('spanish_description')->nullable();
             $table->text('certificate_url')->nullable();
