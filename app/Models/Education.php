@@ -11,11 +11,6 @@ class Education extends Model
     protected $table = 'educations';
     use HasFactory;
 
-    protected $casts = [
-        'with_certificate' => "boolean"
-
-    ];
-
 
 
     public function user()
