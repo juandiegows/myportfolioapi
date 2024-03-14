@@ -60,8 +60,8 @@ class WorkExperienceSeeder extends Seeder
                 'profession_id' => 7,
                 'description' => 'I developed an application for a fast food restaurant, specialized in pizza, using Angular, TypeScript and SCSS. The application allows customers to order online and customize their pizzas according to their tastes and preferences',
                 'spanish_description' => 'Desarrollé una aplicación para un restaurante de comida rápida, especializado en pizza, utilizando Angular, TypeScript y SCSS. La aplicación permite a los clientes hacer pedidos en línea y personalizar sus pizzas según sus gustos y preferencias',
-                'start_date' => '2022-02-01',
-                'end_date' => '2022-12-30'
+                'start_date' => '2022-11-01',
+                'end_date' => '2023-01-30'
             ],
             [
                 'user_id' => 1,
@@ -90,7 +90,7 @@ class WorkExperienceSeeder extends Seeder
                 'certificate_url' =>  null,
                 'description' => 'Web developer with blazor with asp.net core PWA, asp.net api management, agile methodology management with azure, resolve incidents, make changes by services now, API Rest management, working with Scrum methodology, Epica, History, Features, and azure version control.',
                 'spanish_description' => 'Desarrollador web con blazor con asp.net  core PWA, manejo de api con asp.net, manejo de metodoligía agiles con azure, resolver incidentes, realizar cambios por services now, manejo de API Rest, trabajando con la metodologia Scrum, Epica, Historia, Features, y con el control de versiones de azure.',
-                'start_date' => '2023-08-25',
+                'start_date' => '2023-09-25',
                 'end_date' => null
             ],
 

@@ -139,7 +139,8 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            return response()->json(new Response(WorkResource::collection($user->works), new Meta(200, "Ok")));
+            $works = $user->works->sortByDesc('start_date');
+            return response()->json(new Response(WorkResource::collection($works), new Meta(200, "Ok")));
         } else {
             $meta = new Meta();
             $meta->code = 404;
@@ -158,7 +159,8 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            return response()->json(new Response(EducationResource::collection($user->educations), new Meta(200, "Ok")));
+            $educations = $user->educations->sortByDesc('start_date');
+            return response()->json(new Response(EducationResource::collection($educations), new Meta(200, "Ok")));
         } else {
             $meta = new Meta();
             $meta->code = 404;

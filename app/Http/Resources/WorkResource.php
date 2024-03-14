@@ -16,12 +16,12 @@ class WorkResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "logo" => url($this->logo),
+            "logo" => $this->logo == null ? null : url($this->logo),
             "business" => $this->business,
             'profession' => new ProfessionResource($this->profession),
             "description" => $this->description,
             "spanish_description" => $this->spanish_description,
-            "certificate_url" => url($this->certificate_url),
+            "certificate_url" => $this->certificate_url == null ? null :  url($this->certificate_url),
             'topics' => $this->topics()->pluck('name')->toArray(),
             'topics_spanish' => $this->topics()->pluck('spanish_name')->toArray(),
             "start_date" => $this->start_date,
