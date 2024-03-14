@@ -23,7 +23,7 @@ class EducationResource extends JsonResource
             'spanish_title_education' => $this->spanish_title_education,
             "description" => $this->description,
             "spanish_description" => $this->spanish_description,
-            "certificate_url" => url($this->certificate_url),
+            "certificate_url" => $this->certificate_url == null ? null : url($this->certificate_url),
             "start_date" => $this->start_date,
             "end_date" => $this->end_date
         ];
