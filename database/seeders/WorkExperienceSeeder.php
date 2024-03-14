@@ -90,7 +90,7 @@ class WorkExperienceSeeder extends Seeder
                 'certificate_url' =>  null,
                 'description' => 'Web developer with blazor with asp.net core PWA, asp.net api management, agile methodology management with azure, resolve incidents, make changes by services now, API Rest management, working with Scrum methodology, Epica, History, Features, and azure version control.',
                 'spanish_description' => 'Desarrollador web con blazor con asp.net  core PWA, manejo de api con asp.net, manejo de metodoligía agiles con azure, resolver incidentes, realizar cambios por services now, manejo de API Rest, trabajando con la metodologia Scrum, Epica, Historia, Features, y con el control de versiones de azure.',
-                'start_date' => '2023-07-01',
+                'start_date' => '2023-08-25',
                 'end_date' => null
             ],
 
