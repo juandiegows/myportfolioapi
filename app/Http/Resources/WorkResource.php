@@ -18,7 +18,7 @@ class WorkResource extends JsonResource
             "id" => $this->id,
             "logo" => url($this->logo),
             "business" => $this->business,
-            'profession' => new ProfessionResource($this->profession->first()),
+            'profession' => new ProfessionResource($this->profession),
             "description" => $this->description,
             "spanish_description" => $this->spanish_description,
             "certificate_url" => url($this->certificate_url),
