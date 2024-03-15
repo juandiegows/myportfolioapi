@@ -63,7 +63,11 @@ class MessageController extends Controller
                     "code" => 400
                 ],
 
-                'data' =>  $th->getMessage()
+                'data' => [
+                    "message" =>        $th->getMessage(),
+                    'date' => now()
+                ]
+
             ], 400);
         }
     }
