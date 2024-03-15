@@ -27,7 +27,7 @@ class ClientSeeder extends Seeder
                 'name' => "Vittoria Pizzeria",
                 'description' => "",
                 'spanish_description' => "",
-                'url_logo' => "img/client/Lazos-dignidad.svg",
+                'url_logo' => "img/client/vittoria Pizzeria Trattoria.svg",
                 'link_site' => 'https://vittoriapizzeriaytrattoria.com/',
                 'year' => '2023'
             ]
