@@ -27,7 +27,7 @@ class MessageCreated extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->message->subject,
+            subject: "Contacto desde portafolio : " . $this->message->subject,
         );
     }
 
