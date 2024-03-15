@@ -33,6 +33,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/user/{user}/skills', 'skills');
     Route::get('/user/{user}/works', 'works');
     Route::get('/user/{user}/educations', 'educations');
+    Route::get('/user/{user}/projects', 'projects');
 });
 
 
