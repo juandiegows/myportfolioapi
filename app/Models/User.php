@@ -85,6 +85,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Service::class);
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
     public function clients()
     {
         return $this->belongsToMany(Client::class, Participant::class);

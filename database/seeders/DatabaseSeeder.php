@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
                 ParticipantSeeder::class,
                 SkillSeeder::class,
                 ProjectSeeder::class,
+                PostSeeder::class
             ]
         );
     }
