@@ -1,11 +1,13 @@
-{{-- hola {{ $message->name }}
+hola, Juan Diego
+<br>
+{{ $name  }} quiere ponerse en contacto contigo,
+<br>
 
 
-asunto : {{ $message->subject   }}
+asunto : {{ $subject   }}
 <br>
-Email : {{ $message->email }}
+Email : {{ $email }}
 <br>
-Mensaje : {{ $message->message }}
+Mensaje : {{ $messageText }}
 <br>
-Fecha : {{ $message->created_at }} --}}
-hola, desde el portafolio
+Fecha : {{ $created_at }}

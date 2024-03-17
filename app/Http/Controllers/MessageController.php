@@ -51,11 +51,11 @@ class MessageController extends Controller
             return response()->json([
                 'meta' => [
                     'href' => $request->url(),
-                    "code" => 201
+                    "code" => 200
                 ],
 
                 'data' => $message
-            ], 201);
+            ], 200);
         } catch (\Throwable $th) {
             return response()->json([
                 'meta' => [

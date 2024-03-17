@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Symfony\Component\ErrorHandler\Debug;
 
 class MessageCreated extends Mailable
 {
@@ -26,6 +27,7 @@ class MessageCreated extends Mailable
      */
     public function envelope(): Envelope
     {
+
         return new Envelope(
             subject: "Contacto desde portafolio : " . $this->message->subject,
         );
@@ -38,7 +40,13 @@ class MessageCreated extends Mailable
     {
         return new Content(
             view: 'mail.contact-me',
-            with: ['message' => $this->message]
+            with: [
+                'name' => $this->message->name,
+                'subject' => $this->message->subject,
+                'email' => $this->message->email,
+                'created_at' => $this->message->created_at,
+                'messageText' => $this->message->message,
+                ]
         );
     }
 
