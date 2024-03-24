@@ -71,6 +71,10 @@ class TypeTopicSeeder extends Seeder
                 "spanish_name" => "control de versiones",
                 "name" => "version control"
             ],
+            [
+                "spanish_name" => "Servicios web",
+                "name" => "Web Services"
+            ]
         ]);
     }
 }

@@ -217,6 +217,30 @@ class TopicSeeder extends Seeder
                 'spanish_description' => "Es un sistema de control de versiones de software utilizado para rastrear los cambios en el código fuente durante el desarrollo de software. Git es altamente eficiente y proporciona una mayor colaboración en equipo y seguimiento de cambios en el código fuente. Es ampliamente utilizado en la industria del desarrollo de software.",
                 'description' => "It is a software version control system used to track changes in source code during software development. Git is highly efficient and provides greater team collaboration and tracking of changes in source code. It is widely used in the software development industry."
             ],
+            [
+                'type_topic_id' => 7,
+                'name' => '.NET Framework',
+                'spanish_name' => '.NET Framework',
+                'link_image' => 'img/topics/.net.svg',
+                'spanish_description' => "El .NET Framework es un entorno de desarrollo de software desarrollado por Microsoft. Proporciona una amplia biblioteca de clases y soporte para varios lenguajes de programación, lo que permite a los desarrolladores crear una variedad de aplicaciones para Windows, web, móviles y dispositivos embebidos. El .NET Framework incluye un entorno de ejecución común (Common Language Runtime - CLR) que administra la ejecución del código y ofrece características como la administración automática de memoria y la seguridad. Además, proporciona herramientas de desarrollo integradas y soporte para servicios web, lo que lo convierte en una plataforma poderosa para el desarrollo de aplicaciones empresariales y de software.",
+                'description' => ".NET Framework is a software development framework developed by Microsoft. It provides a vast class library and support for multiple programming languages, enabling developers to create a variety of applications for Windows, web, mobile, and embedded devices. .NET Framework includes a Common Language Runtime (CLR) that manages code execution and offers features such as automatic memory management and security. Additionally, it provides integrated development tools and support for web services, making it a powerful platform for enterprise and software application development."
+            ],
+            [
+                'type_topic_id' => 7,
+                'name' => 'API',
+                'spanish_name' => 'API',
+                'link_image' => null,
+                'spanish_description' => "Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y herramientas que permite a diferentes software interactuar entre sí. Las API pueden ser utilizadas para diversas finalidades, como acceder a funcionalidades de un sistema operativo, de una aplicación de software, o de servicios web. Proporcionan una forma estructurada de comunicación entre diferentes componentes de software, lo que facilita la integración y el desarrollo de aplicaciones.",
+                'description' => "An API (Application Programming Interface) is a set of rules and tools that allows different software to interact with each other. APIs can be used for various purposes, such as accessing functionality of an operating system, a software application, or web services. They provide a structured way of communication between different software components, facilitating integration and application development."
+            ],
+            [
+                'type_topic_id' => 7,
+                'name' => 'API REST',
+                'spanish_name' => 'API REST',
+                'link_image' => null,
+                'spanish_description' => "Una API REST (Representational State Transfer) es un estilo de arquitectura para sistemas distribuidos, que se basa en el protocolo HTTP para la comunicación entre clientes y servidores. Las API REST utilizan los métodos estándar de HTTP, como GET, POST, PUT, DELETE, etc., para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en recursos, que pueden ser representados como URIs (Identificadores de Recursos Uniformes). Este enfoque permite una comunicación eficiente y escalable entre sistemas heterogéneos, y es ampliamente utilizado en el desarrollo de aplicaciones web y móviles.",
+                'description' => "A REST API (Representational State Transfer) is an architectural style for distributed systems, based on the HTTP protocol for communication between clients and servers. REST APIs use standard HTTP methods such as GET, POST, PUT, DELETE, etc., to perform CRUD (Create, Read, Update, Delete) operations on resources, which can be represented as URIs (Uniform Resource Identifiers). This approach enables efficient and scalable communication between heterogeneous systems and is widely used in web and mobile application development."
+            ]
         ]);
     }
 }

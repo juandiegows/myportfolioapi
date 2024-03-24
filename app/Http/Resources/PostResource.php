@@ -18,6 +18,8 @@ class PostResource extends JsonResource
             "id" => $this->id,
             "title" => $this->title,
             "spanish_title" => $this->spanish_title,
+            'topics' => $this->topics()->pluck('name')->toArray(),
+            'topics_spanish' => $this->topics()->pluck('spanish_name')->toArray(),
             "url_image" => url($this->url_image),
             "link" => $this->link,
             "date" => $this->date,

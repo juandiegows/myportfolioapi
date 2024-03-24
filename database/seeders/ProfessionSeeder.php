@@ -13,7 +13,7 @@ class ProfessionSeeder extends Seeder
      */
     public function run(): void
     {
-        Profession::insert(
+        Profession::insertOrIgnore(
             [
                 [
                     "name" => "Web Developer",
