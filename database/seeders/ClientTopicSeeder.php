@@ -16,7 +16,7 @@ class ClientTopicSeeder extends Seeder
 
     public function run(): void
     {
-        ClientTopic::insert([
+        ClientTopic::insertOrIgnore([
             [
                 'client_id' => 1,
                 'topic_id' => 1,

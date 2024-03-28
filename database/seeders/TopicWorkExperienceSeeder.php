@@ -13,7 +13,7 @@ class TopicWorkExperienceSeeder extends Seeder
      */
     public function run(): void
     {
-        TopicWorkExperience::insert([
+        TopicWorkExperience::insertOrIgnore([
             [
                 'topic_id' => 1,
                 'work_experience_id' => 1
@@ -133,7 +133,35 @@ class TopicWorkExperienceSeeder extends Seeder
             [
                 'topic_id' => 19,
                 'work_experience_id' => 5
-            ]
+            ],
+            [
+                'topic_id' => 10,
+                'work_experience_id' => 6
+            ],
+            [
+                'topic_id' => 12,
+                'work_experience_id' => 6
+            ],
+            [
+                'topic_id' => 1,
+                'work_experience_id' => 6
+            ],
+            [
+                'topic_id' => 29,
+                'work_experience_id' => 6
+            ],
+            [
+                'topic_id' => 30,
+                'work_experience_id' => 6
+            ],
+            [
+                'topic_id' => 31,
+                'work_experience_id' => 6
+            ],
+            [
+                'topic_id' => 32,
+                'work_experience_id' => 6
+            ],
         ]);
     }
 }

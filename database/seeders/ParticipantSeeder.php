@@ -13,7 +13,7 @@ class ParticipantSeeder extends Seeder
      */
     public function run(): void
     {
-        Participant::insert([
+        Participant::insertOrIgnore([
             [
                 "user_id" => "1",
                 "client_id" => "1"

@@ -15,7 +15,7 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        $image = Image::create([
+        $image = Image::firstOrCreate([
             'name' => "My portfolio",
             'name_spanish' => "Mi portafolio",
             'link' =>  "img/projects/portfolio/portfolio.png",
@@ -24,7 +24,7 @@ class ProjectSeeder extends Seeder
             'link_300' => "img/projects/portfolio/portfolio-300.png",
         ]);
 
-        $project = Project::create([
+        $project = Project::firstOrCreate([
             'client_id' => null,
             'front_page_id' => $image->id,
             'title' => 'My portfolio',
@@ -39,7 +39,7 @@ class ProjectSeeder extends Seeder
             'date' => '2024-03-14'
         ]);
 
-        ProjectUser::create([
+        ProjectUser::firstOrCreate([
             'user_id' => 1,
             'project_id' => $project->id
         ]);

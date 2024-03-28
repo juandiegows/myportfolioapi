@@ -12,7 +12,7 @@ class ProfessionUserSeeder extends Seeder
      */
     public function run(): void
     {
-        ProfessionUser::insert([
+        ProfessionUser::insertOrIgnore([
 
             ['profession_id' => 1, 'user_id' => 1],
             ['profession_id' => 2, 'user_id' => 1],

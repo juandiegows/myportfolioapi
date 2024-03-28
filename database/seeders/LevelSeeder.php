@@ -17,7 +17,7 @@ class LevelSeeder extends Seeder
     // $table->string('spanish_name', 45)->unique();
     public function run(): void
     {
-        Level::insert([
+        Level::insertOrIgnore([
             [
                 'name' => 'Newbie',
                 'spanish_name' => 'Novato'

@@ -13,15 +13,8 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
-        //            $table->id();
-        // $table->foreignIdFor(User::class)->constrained();
-        // $table->string('title', 250)->unique();
-        // $table->string('spanish_title', 250)->unique();
-        // $table->text('description');
-        // $table->text('spanish_description');
-        // $table->tinyInteger('active')->default(1);
 
-        Service::insert([
+        Service::insertOrIgnore([
 
             [
                 "user_id" => 1,

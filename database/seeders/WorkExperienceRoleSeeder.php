@@ -11,7 +11,7 @@ class WorkExperienceRoleSeeder extends Seeder
 
     public function run(): void
     {
-        WorkExperienceRole::insert([
+        WorkExperienceRole::insertOrIgnore([
             [
                 'work_experience_id' => 1,
                 'profession_id' => 1
@@ -75,7 +75,7 @@ class WorkExperienceRoleSeeder extends Seeder
             [
                 'work_experience_id' => 5,
                 'profession_id' => 1
-            ]
+            ],
 
 
 

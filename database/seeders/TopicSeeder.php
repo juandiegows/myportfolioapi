@@ -17,6 +17,7 @@ class TopicSeeder extends Seeder
         Topic::insertOrIgnore([
 
             [
+                'topic_id' => null,
                 'type_topic_id' => 1,
                 'name' => 'PHP',
                 'spanish_name' => 'PHP',
@@ -25,6 +26,7 @@ class TopicSeeder extends Seeder
                 'spanish_description' => 'Es un lenguaje de programación web ampliamente utilizado. Permite crear aplicaciones web dinámicas y personalizadas. Es fácil de usar y tiene una gran comunidad de desarrolladores.'
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 2,
                 'name' => 'MVC',
                 'spanish_name' => 'MVC',
@@ -33,6 +35,7 @@ class TopicSeeder extends Seeder
                 'spanish_description' => "Es un patrón en el diseño de software comúnmente utilizado para implementar interfaces de usuario, datos y lógica de control."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 3,
                 'name' => 'JQuery',
                 'spanish_name' => 'JQuery',
@@ -41,6 +44,7 @@ class TopicSeeder extends Seeder
                 'description' => "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 4,
                 'name' => 'CSS',
                 'spanish_name' => 'CSS',
@@ -49,6 +53,7 @@ class TopicSeeder extends Seeder
                 'description' => "It's a cascading style sheet language used in web development to describe the visual presentation of HTML and XML documents. While not considered a full programming language, it's essential for creating modern and attractive websites. It's supported by all modern web browsers."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 5,
                 'name' => 'HTML',
                 'spanish_name' => 'HTML',
@@ -57,6 +62,7 @@ class TopicSeeder extends Seeder
                 'description' => "it is the most basic component of the Web. Define the meaning and structure of web content. In addition to HTML, other technologies are generally used to describe the appearance/presentation of a web page (CSS) or functionality/behavior (JavaScript)."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 6,
                 'name' => 'POO',
                 'spanish_name' => 'POO',
@@ -66,6 +72,7 @@ class TopicSeeder extends Seeder
             ],
 
             [
+                'topic_id' => null,
                 'type_topic_id' => 7,
                 'name' => 'Angular',
                 'spanish_name' => 'Angular',
@@ -74,6 +81,7 @@ class TopicSeeder extends Seeder
                 'description' => "It's a JavaScript framework for building web and hybrid mobile applications. It uses TypeScript for greater efficiency and is highly scalable. It has a large community of developers and modern development tools."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 1,
                 'name' => 'TypeScript ',
                 'spanish_name' => 'TypeScript',
@@ -82,6 +90,7 @@ class TopicSeeder extends Seeder
                 'description' => "TypeScript is a programming language developed by Microsoft that is based on JavaScript. It is a superset of JavaScript, which means that any existing JavaScript code is valid in TypeScript. However, TypeScript adds additional features and provides tools for more robust and scalable application development."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 4,
                 'name' => 'SCSS',
                 'spanish_name' => 'SCSS',
@@ -90,6 +99,7 @@ class TopicSeeder extends Seeder
                 'description' => "   SCSS, or \"Sassy CSS\", is an extension to the CSS (Cascading Style Sheets) language that adds additional features and functionality to traditional CSS. SCSS is based on the Sass (Syntactically Awesome Style Sheets) preprocessor and shares a similar syntax, but with some differences."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 8,
                 'name' => 'MySQL',
                 'spanish_name' => 'MySQL',
@@ -98,6 +108,7 @@ class TopicSeeder extends Seeder
                 'description' => "MySQL is a widely used open source relational database management system (RDBMS). It was originally developed by MySQL AB and is now owned by Oracle Corporation."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 1,
                 'name' => 'C#',
                 'spanish_name' => 'C#',
@@ -106,6 +117,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is an object-oriented, general-purpose programming language developed by Microsoft. It is primarily used to develop desktop, mobile, web, and game applications. C# is based on the .NET framework and offers advanced features such as automatic garbage collection and memory management."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 1,
                 'name' => 'Javascript',
                 'spanish_name' => 'Javascript',
@@ -114,6 +126,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is a programming language used to develop interactive web applications. It runs on the user's browser and adds interactivity to web pages. It is essential for any modern web developer."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 8,
                 'name' => 'SQL Server',
                 'spanish_name' => 'SQL Server',
@@ -122,6 +135,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is an RDBMS created by Microsoft for data management and analysis. It provides features like support for transactions, complex queries, and data security. Widely used in companies to store and analyze large amounts of data."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 9,
                 'name' => 'Android Studio',
                 'spanish_name' => 'Android Studio',
@@ -130,6 +144,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is the official IDE for the development of Android applications, created by Google. It provides a code editor, a debugger, and device emulators, among other tools. It supports Java, Kotlin, and other programming languages."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 1,
                 'name' => 'Java',
                 'spanish_name' => 'Java',
@@ -138,6 +153,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is an object-oriented programming language used to develop enterprise, mobile, and game applications. It is based on the Java Virtual Machine (JVM) for portability and offers high-level features such as automatic garbage collection and exception handling."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 9,
                 'name' => 'Visual Studio',
                 'spanish_name' => 'Visual Studio',
@@ -146,6 +162,7 @@ class TopicSeeder extends Seeder
                 'description' => "It's a Microsoft IDE. It offers tools for developing applications on multiple platforms and languages. It's used by developers to create desktop, web, and mobile applications."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 1,
                 'name' => 'Kotlin',
                 'spanish_name' => 'Kotlin',
@@ -154,6 +171,7 @@ class TopicSeeder extends Seeder
                 'description' => "It's a programming language used for developing Android, server, and web applications. It's safe, interoperable, and concise. It's compatible with popular development tools and has a growing community."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 7,
                 'name' => 'Vue.js',
                 'spanish_name' => 'Vue.js',
@@ -161,7 +179,9 @@ class TopicSeeder extends Seeder
                 'spanish_description' => "Es un framework de JavaScript para construir interfaces de usuario interactivas y aplicaciones de una sola página. Proporciona un enfoque basado en componentes para la creación de aplicaciones web, lo que permite una mayor modularidad y reutilización de código. Es altamente adaptable y fácil de integrar con otras bibliotecas de JavaScript.",
                 'description' => "It's a JavaScript framework for building interactive user interfaces and single-page applications. It provides a component-based approach to web application development, allowing for greater modularity and code reuse. It's highly adaptable and easy to integrate with other JavaScript libraries."
             ],
+
             [
+                'topic_id' => null,
                 'type_topic_id' => 10,
                 'name' => 'SEO',
                 'spanish_name' => 'SEO',
@@ -170,6 +190,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is a set of techniques and strategies used to optimize a website and improve its visibility in search engine results."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 8,
                 'name' => 'SQLite',
                 'spanish_name' => 'SQLite',
@@ -178,6 +199,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is a lightweight, serverless relational database engine used to store and manage data locally. Easy to integrate into applications, provides support for transactions, complex queries and data security. Compatible with most operating systems."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 9,
                 'name' => 'Figma',
                 'spanish_name' => 'Figma',
@@ -186,6 +208,7 @@ class TopicSeeder extends Seeder
                 'description' => "It's a cloud-based tool for UI/UX design. It allows real-time collaboration and the creation of interactive designs and prototypes. It provides vector design tools, reusable component libraries, and a team collaboration platform."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 11,
                 'name' => 'Ubuntu',
                 'spanish_name' => 'Ubuntu',
@@ -193,7 +216,9 @@ class TopicSeeder extends Seeder
                 'spanish_description' => "Es un sistema operativo de código abierto y gratuito, basado en Linux. Fácil de instalar y utilizar, viene con una amplia gama de aplicaciones y herramientas preinstaladas. Popular entre los usuarios de Linux por su facilidad de uso y soporte comunitario activo.",
                 'description' => "It's a free and open-source operating system based on Linux. Easy to install and use, it comes with a wide range of pre-installed applications and tools. Popular among Linux users for its ease of use and active community support."
             ],
+
             [
+                'topic_id' => null,
                 'type_topic_id' => 12,
                 'name' => 'Visual Studio Code',
                 'spanish_name' => 'Visual Studio Code',
@@ -202,6 +227,7 @@ class TopicSeeder extends Seeder
                 'description' => "It's a free, multi-platform code editor from Microsoft. It has advanced tools like Git and code autocompletion. It's popular among developers for its ease of use and available extensions."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 13,
                 'name' => 'Node.js',
                 'spanish_name' => 'Node.js',
@@ -210,6 +236,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is a JavaScript runtime environment built on the Google Chrome V8 engine. It allows developers to run JavaScript on the server-side to create scalable and high-performance web applications. Node.js has a large community and a rich ecosystem of libraries and tools."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 14,
                 'name' => 'Git',
                 'spanish_name' => 'Git',
@@ -218,6 +245,7 @@ class TopicSeeder extends Seeder
                 'description' => "It is a software version control system used to track changes in source code during software development. Git is highly efficient and provides greater team collaboration and tracking of changes in source code. It is widely used in the software development industry."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 7,
                 'name' => '.NET Framework',
                 'spanish_name' => '.NET Framework',
@@ -226,6 +254,7 @@ class TopicSeeder extends Seeder
                 'description' => ".NET Framework is a software development framework developed by Microsoft. It provides a vast class library and support for multiple programming languages, enabling developers to create a variety of applications for Windows, web, mobile, and embedded devices. .NET Framework includes a Common Language Runtime (CLR) that manages code execution and offers features such as automatic memory management and security. Additionally, it provides integrated development tools and support for web services, making it a powerful platform for enterprise and software application development."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 7,
                 'name' => 'API',
                 'spanish_name' => 'API',
@@ -234,12 +263,51 @@ class TopicSeeder extends Seeder
                 'description' => "An API (Application Programming Interface) is a set of rules and tools that allows different software to interact with each other. APIs can be used for various purposes, such as accessing functionality of an operating system, a software application, or web services. They provide a structured way of communication between different software components, facilitating integration and application development."
             ],
             [
+                'topic_id' => null,
                 'type_topic_id' => 7,
                 'name' => 'API REST',
                 'spanish_name' => 'API REST',
                 'link_image' => null,
                 'spanish_description' => "Una API REST (Representational State Transfer) es un estilo de arquitectura para sistemas distribuidos, que se basa en el protocolo HTTP para la comunicación entre clientes y servidores. Las API REST utilizan los métodos estándar de HTTP, como GET, POST, PUT, DELETE, etc., para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en recursos, que pueden ser representados como URIs (Identificadores de Recursos Uniformes). Este enfoque permite una comunicación eficiente y escalable entre sistemas heterogéneos, y es ampliamente utilizado en el desarrollo de aplicaciones web y móviles.",
                 'description' => "A REST API (Representational State Transfer) is an architectural style for distributed systems, based on the HTTP protocol for communication between clients and servers. REST APIs use standard HTTP methods such as GET, POST, PUT, DELETE, etc., to perform CRUD (Create, Read, Update, Delete) operations on resources, which can be represented as URIs (Uniform Resource Identifiers). This approach enables efficient and scalable communication between heterogeneous systems and is widely used in web and mobile application development."
+            ],
+            [
+                'topic_id' => null,
+                'type_topic_id' => 7,
+                'name' => 'Laravel',
+                'spanish_name' => 'Laravel',
+                'link_image' => 'img/topics/Laravel.svg',
+                'spanish_description' => "Laravel es un marco de aplicación web de código abierto para el desarrollo de aplicaciones web en PHP. Sigue el patrón de arquitectura MVC y proporciona características como enrutamiento, migraciones de base de datos, autenticación de usuarios y una amplia gama de bibliotecas que hacen que el desarrollo web sea rápido y eficiente.",
+                'description' => "Laravel is an open-source PHP web application framework for web application development. It follows the MVC architecture pattern and provides features like routing, database migrations, user authentication, and a wide range of libraries that make web development fast and efficient."
+            ],
+            [
+                'topic_id' => null,
+                'type_topic_id' => 7,
+                'name' => 'Alpine.js',
+                'spanish_name' => 'Alpine.js',
+                'link_image' => 'img/topics/Alpine.js.svg',
+                'spanish_description' => "Alpine.js es un marco de trabajo minimalista de JavaScript para desarrollar aplicaciones web interactivas y dinámicas. Se centra en la manipulación del DOM directamente desde HTML, lo que lo hace fácil de aprender y usar. Alpine.js es una excelente opción para agregar interactividad a sitios web sin el peso de otros marcos de trabajo más grandes.",
+                'description' => "Alpine.js is a minimalist JavaScript framework for developing interactive and dynamic web applications. It focuses on manipulating the DOM directly from HTML, making it easy to learn and use. Alpine.js is an excellent choice for adding interactivity to websites without the overhead of larger frameworks."
+            ],
+
+            [
+                'topic_id' => null,
+                'type_topic_id' => 3,
+                'name' => 'Livewire',
+                'spanish_name' => 'Livewire',
+                'link_image' => 'img/topics/Livewire.svg',
+                'spanish_description' => "Livewire es una biblioteca de front-end de código abierto para Laravel que permite desarrollar interfaces de usuario interactivas utilizando PHP en el servidor. Utiliza técnicas de reactividad para actualizar la interfaz de usuario en tiempo real sin necesidad de escribir código JavaScript. Livewire simplifica el desarrollo de aplicaciones web al permitir a los desarrolladores centrarse en escribir PHP.",
+                'description' => "Livewire is an open-source front-end library for Laravel that allows developing interactive user interfaces using PHP on the server. It uses reactivity techniques to update the UI in real-time without writing JavaScript code. Livewire simplifies web application development by allowing developers to focus on writing PHP."
+            ],
+
+            [
+                'topic_id' => 29,
+                'type_topic_id' => 3,
+                'name' => 'DOMPDF/Laravel',
+                'spanish_name' => 'DOMPDF/Laravel',
+                'link_image' =>null,
+                'spanish_description' => "DOMPDF es una biblioteca de PHP que permite generar documentos PDF directamente desde HTML y CSS. Es útil para generar informes, facturas, certificados y otros documentos en formato PDF directamente desde una aplicación web. DOMPDF facilita la generación de PDFs dinámicos al permitir el uso de HTML y CSS estándar.",
+                'description' => "DOMPDF is a PHP library that allows generating PDF documents directly from HTML and CSS. It is useful for generating reports, invoices, certificates, and other documents in PDF format directly from a web application. DOMPDF makes generating dynamic PDFs easy by allowing the use of standard HTML and CSS."
             ]
         ]);
     }

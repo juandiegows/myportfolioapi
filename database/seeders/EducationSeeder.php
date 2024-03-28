@@ -11,7 +11,7 @@ class EducationSeeder extends Seeder
 
     public function run(): void
     {
-        Education::insert([
+        Education::insertOrIgnore([
             [
                 "user_id" => 1,
                 "entity" => "Hugues Manuel Lacouture",

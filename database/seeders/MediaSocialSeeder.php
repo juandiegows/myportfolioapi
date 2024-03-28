@@ -13,7 +13,7 @@ class MediaSocialSeeder extends Seeder
      */
     public function run(): void
     {
-        SocialMedia::insert([
+        SocialMedia::insertOrIgnore([
             [
                 "name" => "Facebook",
                 "link_image" => "img/SocialMedia/FB.svg"

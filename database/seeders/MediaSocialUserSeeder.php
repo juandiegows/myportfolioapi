@@ -12,7 +12,7 @@ class MediaSocialUserSeeder extends Seeder
      */
     public function run(): void
     {
-        SocialMediaUser::insert([
+        SocialMediaUser::insertOrIgnore([
             [
                 'user_id' => 1,
                 'social_media_id' => 1,

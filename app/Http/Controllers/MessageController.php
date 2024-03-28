@@ -44,7 +44,6 @@ class MessageController extends Controller
                 ], 400);
             }
 
-
             $message =  Message::create($request->all());
             Mail::to(Config::get('app.MAIL'))
                 ->send(new MessageCreated($message));

@@ -14,7 +14,7 @@ class ClientSeeder extends Seeder
 
     public function run(): void
     {
-        Client::insert([
+        Client::insertOrIgnore([
             [
                 'name' => "Lazos de dignidad",
                 'description' => "",
