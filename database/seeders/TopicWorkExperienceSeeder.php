@@ -162,6 +162,46 @@ class TopicWorkExperienceSeeder extends Seeder
                 'topic_id' => 32,
                 'work_experience_id' => 6
             ],
+            [
+                'topic_id' => 29,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 1,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 4,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 5,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 10,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 12,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 14,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 17,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 23,
+                'work_experience_id' => 7
+            ],
+            [
+                'topic_id' => 25,
+                'work_experience_id' => 7
+            ]
         ]);
     }
 }
