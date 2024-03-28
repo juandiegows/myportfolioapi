@@ -334,7 +334,7 @@ class TopicSeeder extends Seeder
                 'type_topic_id' => 7,
                 'name' => 'Blazor',
                 'spanish_name' => 'blazor',
-                'link_image' => 'img/topics/Blazor.svg',
+                'link_image' => 'img/topics/blazor.svg',
                 'spanish_description' => "Blazor es un marco de trabajo de desarrollo web de código abierto creado por Microsoft que permite construir aplicaciones web interactivas utilizando C# y .NET en lugar de JavaScript. Utiliza la tecnología WebAssembly para ejecutar código .NET en el navegador, lo que permite a los desarrolladores crear aplicaciones web modernas y rápidas sin tener que escribir código JavaScript.",
                 'description' => "Blazor is an open-source web development framework created by Microsoft that allows building interactive web applications using C# and .NET instead of JavaScript. It uses WebAssembly technology to run .NET code in the browser, enabling developers to create modern and fast web applications without having to write JavaScript code."
             ]
