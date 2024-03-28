@@ -276,7 +276,7 @@ class TopicSeeder extends Seeder
                 'type_topic_id' => 7,
                 'name' => 'Laravel',
                 'spanish_name' => 'Laravel',
-                'link_image' => 'img/topics/Laravel.svg',
+                'link_image' => 'img/topics/laravel.svg',
                 'spanish_description' => "Laravel es un marco de aplicación web de código abierto para el desarrollo de aplicaciones web en PHP. Sigue el patrón de arquitectura MVC y proporciona características como enrutamiento, migraciones de base de datos, autenticación de usuarios y una amplia gama de bibliotecas que hacen que el desarrollo web sea rápido y eficiente.",
                 'description' => "Laravel is an open-source PHP web application framework for web application development. It follows the MVC architecture pattern and provides features like routing, database migrations, user authentication, and a wide range of libraries that make web development fast and efficient."
             ],
@@ -285,7 +285,7 @@ class TopicSeeder extends Seeder
                 'type_topic_id' => 7,
                 'name' => 'Alpine.js',
                 'spanish_name' => 'Alpine.js',
-                'link_image' => 'img/topics/Alpine.js.svg',
+                'link_image' => 'img/topics/Alpinejs.svg',
                 'spanish_description' => "Alpine.js es un marco de trabajo minimalista de JavaScript para desarrollar aplicaciones web interactivas y dinámicas. Se centra en la manipulación del DOM directamente desde HTML, lo que lo hace fácil de aprender y usar. Alpine.js es una excelente opción para agregar interactividad a sitios web sin el peso de otros marcos de trabajo más grandes.",
                 'description' => "Alpine.js is a minimalist JavaScript framework for developing interactive and dynamic web applications. It focuses on manipulating the DOM directly from HTML, making it easy to learn and use. Alpine.js is an excellent choice for adding interactivity to websites without the overhead of larger frameworks."
             ],
