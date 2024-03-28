@@ -74,7 +74,15 @@ class TypeTopicSeeder extends Seeder
             [
                 "spanish_name" => "Servicios web",
                 "name" => "Web Services"
-            ]
+            ],
+            [
+                "spanish_name" => "Metodologia agiles",
+                "name" => "Agile Methodology"
+            ],
+            [
+                "spanish_name" => "plataforma de servicios",
+                "name" => "service platform"
+            ],
         ]);
     }
 }

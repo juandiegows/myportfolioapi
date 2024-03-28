@@ -308,6 +308,35 @@ class TopicSeeder extends Seeder
                 'link_image' =>null,
                 'spanish_description' => "DOMPDF es una biblioteca de PHP que permite generar documentos PDF directamente desde HTML y CSS. Es útil para generar informes, facturas, certificados y otros documentos en formato PDF directamente desde una aplicación web. DOMPDF facilita la generación de PDFs dinámicos al permitir el uso de HTML y CSS estándar.",
                 'description' => "DOMPDF is a PHP library that allows generating PDF documents directly from HTML and CSS. It is useful for generating reports, invoices, certificates, and other documents in PDF format directly from a web application. DOMPDF makes generating dynamic PDFs easy by allowing the use of standard HTML and CSS."
+            ],
+            [
+                'topic_id' => null,
+                'type_topic_id' => 17,
+                'name' => 'Azure',
+                'spanish_name' => 'Azure',
+                'link_image' => 'img/topics/azure.svg',
+                'spanish_description' => "Azure es la plataforma de servicios en la nube de Microsoft que ofrece una amplia gama de servicios para desarrollar, implementar y administrar aplicaciones y servicios en la nube. Esto incluye servicios de cómputo, almacenamiento, bases de datos, inteligencia artificial, Internet de las cosas (IoT), entre otros. Azure permite a los desarrolladores crear soluciones escalables y rentables sin preocuparse por la infraestructura subyacente.",
+                'description' => "Azure is Microsoft's cloud services platform that offers a wide range of services for developing, deploying, and managing cloud-based applications and services. This includes compute, storage, database, artificial intelligence, Internet of Things (IoT), and more. Azure enables developers to build scalable and cost-effective solutions without worrying about the underlying infrastructure."
+            ],
+
+            [
+                'topic_id' => null,
+                'type_topic_id' => 16,
+                'name' => 'Scrum',
+                'spanish_name' => 'Scrum',
+                'link_image' => null,
+                'spanish_description' => "Scrum es un marco de trabajo ágil utilizado comúnmente en el desarrollo de software para gestionar proyectos de manera iterativa e incremental. Se basa en principios de transparencia, inspección y adaptación, y se centra en la entrega continua de valor al cliente. Scrum define roles, eventos y artefactos que ayudan a los equipos a trabajar de manera colaborativa y eficiente.",
+                'description' => "Scrum is an agile framework commonly used in software development to manage projects iteratively and incrementally. It is based on principles of transparency, inspection, and adaptation, and focuses on continuously delivering value to the customer. Scrum defines roles, events, and artifacts that help teams work collaboratively and efficiently."
+            ],
+
+            [
+                'topic_id' => null,
+                'type_topic_id' => 7,
+                'name' => 'Blazor',
+                'spanish_name' => 'blazor',
+                'link_image' => 'img/topics/Blazor.svg',
+                'spanish_description' => "Blazor es un marco de trabajo de desarrollo web de código abierto creado por Microsoft que permite construir aplicaciones web interactivas utilizando C# y .NET en lugar de JavaScript. Utiliza la tecnología WebAssembly para ejecutar código .NET en el navegador, lo que permite a los desarrolladores crear aplicaciones web modernas y rápidas sin tener que escribir código JavaScript.",
+                'description' => "Blazor is an open-source web development framework created by Microsoft that allows building interactive web applications using C# and .NET instead of JavaScript. It uses WebAssembly technology to run .NET code in the browser, enabling developers to create modern and fast web applications without having to write JavaScript code."
             ]
         ]);
     }

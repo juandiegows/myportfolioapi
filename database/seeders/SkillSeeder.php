@@ -114,6 +114,14 @@ class SkillSeeder extends Seeder
                 'user_id' => 1,
                 'topic_id' => 31,
             ],
+            [
+                'user_id' => 1,
+                'topic_id' => 33,
+            ],
+            [
+                'user_id' => 1,
+                'topic_id' => 35,
+            ],
         ]);
     }
 }
