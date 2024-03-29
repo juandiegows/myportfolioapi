@@ -9,8 +9,8 @@ class IpAddressController extends Controller
 {
     public function getIpAddress(Request $request)
     {
-        $ipv4 = $request->ip();
-        $ipv6 = $request->header('X-Forwarded-For');
+        $ipv4 = $request->ips();
+        $ipv6 = $request->getClientIps();
         $client = $request->userAgent() ?:'';
         $https = $request->secure();
         return response()->json([
