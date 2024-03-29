@@ -50,7 +50,7 @@ class PostSeeder extends Seeder
             [
                 "title" => "How to create multilanguage applications with C#?",
                 "spanish_title" => "¿Cómo crear aplicaciones multilenguaje con C#?",
-                "url_image" => "img/posts/HttpStatusCodeframework.png",
+                "url_image" => "img/posts/FormularioMultilenguaje.png",
                 "link" => "https://dev.to/juandiegows/como-crear-aplicaciones-multilenguaje-con-c-539b",
                 "date" => "2021-03-22",
                 'user_id' => 1,
@@ -70,7 +70,7 @@ class PostSeeder extends Seeder
             [
                 "title" => "How to get the color that is under the mouse cursor in C#?",
                 "spanish_title" => "¿Cómo obtener el color que esta debajo del cursor del mouse en C#?",
-                "url_image" => "img/posts/HttpStatusCodeframework.png",
+                "url_image" => "img/posts/obtenercolor.png",
                 "link" => "https://dev.to/juandiegows/como-obtener-el-color-que-esta-debajo-del-cursor-del-mouse-21ej",
                 "date" => "2021-03-18",
                 'user_id' => 1,
@@ -90,8 +90,8 @@ class PostSeeder extends Seeder
             [
                 "title" => "How to make the form size change when the border is \"none\" in C#?",
                 "spanish_title" => "¿Cómo hacer que el tamaño del formulario cambie cuando el borde es \"none\" en C#?",
-                "url_image" => "img/posts/HttpStatusCodeframework.png",
-                "link" => "https://dev.to/juandiegows/como-obtener-el-color-que-esta-debajo-del-cursor-del-mouse-21ej",
+                "url_image" => "img/posts/Formulariocirculares.png",
+                "link" => "https://dev.to/juandiegows/como-hacer-que-el-tamano-del-formulario-cambie-cuando-el-borde-es-none-24ke",
                 "date" => "2021-03-18",
                 'user_id' => 1,
                 "created_at" => now(),
@@ -132,7 +132,7 @@ class PostSeeder extends Seeder
             [
                 "title" => "How to add a YouTube video in Dev.to?",
                 "spanish_title" => "¿Cómo agregar un vídeo de YouTube en Dev.to?",
-                "url_image" => "img/posts/svgImgcsharp.png",
+                "url_image" => "img/posts/devtovideoyoutube.png",
                 "link" => "https://dev.to/juandiegows/como-insertar-un-video-de-youtube-en-dev-to-3hhm",
                 "date" => "2021-03-19",
                 'user_id' => 1,
