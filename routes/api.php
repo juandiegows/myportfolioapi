@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IpAddressController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\MessageController;
@@ -36,7 +37,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/user/{user}/projects', 'projects');
     Route::get('/user/{user}/posts', 'posts');
 });
-
+Route::get('/ip-address', [IpAddressController::class, 'getIpAddress']);
 
 
 Route::controller(MessageController::class)->group(function () {
