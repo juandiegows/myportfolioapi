@@ -83,6 +83,10 @@ class TypeTopicSeeder extends Seeder
                 "spanish_name" => "plataforma de servicios",
                 "name" => "service platform"
             ],
+            [
+                "spanish_name" => "otros",
+                "name" => "others"
+            ],
         ]);
     }
 }

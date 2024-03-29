@@ -337,7 +337,26 @@ class TopicSeeder extends Seeder
                 'link_image' => 'img/topics/blazor.svg',
                 'spanish_description' => "Blazor es un marco de trabajo de desarrollo web de código abierto creado por Microsoft que permite construir aplicaciones web interactivas utilizando C# y .NET en lugar de JavaScript. Utiliza la tecnología WebAssembly para ejecutar código .NET en el navegador, lo que permite a los desarrolladores crear aplicaciones web modernas y rápidas sin tener que escribir código JavaScript.",
                 'description' => "Blazor is an open-source web development framework created by Microsoft that allows building interactive web applications using C# and .NET instead of JavaScript. It uses WebAssembly technology to run .NET code in the browser, enabling developers to create modern and fast web applications without having to write JavaScript code."
-            ]
+            ],
+            [
+                'topic_id' => null,
+                'type_topic_id' => 16,
+                'name' => 'SVG',
+                'spanish_name' => 'SVG',
+                'link_image' => 'img/topics/svg.svg',
+                'spanish_description' => "SVG (Scalable Vector Graphics) es un formato de gráficos vectoriales basado en XML que se utiliza para definir gráficos basados en vectores para la web. Permite crear imágenes de alta calidad y resolución independiente de la pantalla, lo que las hace ideales para gráficos en la web y aplicaciones interactivas.",
+                'description' => "SVG (Scalable Vector Graphics) is an XML-based vector graphics format used to define vector-based graphics for the web. It allows creating high-quality images that are resolution-independent, making them ideal for graphics on the web and interactive applications."
+            ],
+            [
+                'topic_id' => null,
+                'type_topic_id' => 18,
+                'name' => 'dev.to',
+                'spanish_name' => 'dev.to',
+                'link_image' => null,
+                'spanish_description' => "Dev.to es una plataforma comunitaria en línea donde los desarrolladores comparten y discuten ideas y conocimientos sobre programación, tecnología y desarrollo de software. Los usuarios pueden publicar artículos, tutoriales, opiniones y debates sobre una amplia gama de temas relacionados con la programación y la informática.",
+                'description' => "Dev.to is an online community platform where developers share and discuss ideas and knowledge about programming, technology, and software development. Users can publish articles, tutorials, opinions, and discussions on a wide range of topics related to programming and computer science."
+            ],
+
         ]);
     }
 }
