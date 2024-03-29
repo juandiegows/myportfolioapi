@@ -16,7 +16,7 @@ class IpAddressController extends Controller
 
         $binary = @inet_pton($ipv6);
 
-        if ($binary) {{
+        if ($binary) {
             $ipv4 = @inet_ntop(substr($binary, 12));
         }
         return response()->json([
