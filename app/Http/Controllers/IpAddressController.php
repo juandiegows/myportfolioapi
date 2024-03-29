@@ -11,19 +11,17 @@ class IpAddressController extends Controller
     {
         $ipv4 = $request->ip();
         $ipv6 = $request->getClientIp();
-        $ipv62 = $request->header('X-Real-IP');
-        if (!$ipv62) {
-            $ipv62 = $request->header('X-Forwarded-For');
-        }
-        if (!$ipv62) {
-            $ipv62 = $request->header('Forwarded');
-        }
         $client = $request->userAgent() ?: '';
         $https = $request->secure();
+
+        $binary = @inet_pton($ipv6);
+
+        if ($binary) {{
+            $ipv4 = @inet_ntop(substr($binary, 12));
+        }
         return response()->json([
             'ipv4' => $ipv4,
             'ipv6' => $ipv6,
-            'ipv62' => $ipv62,
             'client' => $client,
             'useHttps' => $https
         ]);
