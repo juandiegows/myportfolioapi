@@ -10,6 +10,7 @@ use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\TypeTopicController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VisitController;
 use App\Http\Controllers\WorkExperienceController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,7 @@ Route::controller(UserController::class)->group(function () {
 });
 Route::get('/ip-address', [IpAddressController::class, 'getIpAddress']);
 
-
+Route::get('/visit', [VisitController::class, 'index']);
 Route::controller(MessageController::class)->group(function () {
     Route::post('message', 'store');
 });
