@@ -6,7 +6,6 @@ class Util {
 
    public static function getBrowser($client)
     {
-
         if (strpos($client, 'MSIE') !== false)
             return 'Internet explorer';
         elseif (strpos($client, 'Trident') !== false)
