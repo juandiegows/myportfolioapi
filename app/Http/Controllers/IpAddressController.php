@@ -12,8 +12,8 @@ class IpAddressController extends Controller
     public function getIpAddress(Request $request)
     {
 
-        $ipv4 =  file_get_contents('http://checkip.amazonaws.com/');
-        $ipv4 = trim($ipv4);
+ 
+        $ipv4 =$request->ip();
         $ipv6 = $request->getClientIp();
         $client = $request->userAgent() ?: '';
         $https = $request->secure();
