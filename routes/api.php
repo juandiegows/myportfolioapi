@@ -41,6 +41,8 @@ Route::controller(UserController::class)->group(function () {
 Route::get('/ip-address', [IpAddressController::class, 'getIpAddress']);
 
 Route::get('/visit', [VisitController::class, 'index']);
+Route::get('/visit/all', [VisitController::class, 'all']);
+
 Route::controller(MessageController::class)->group(function () {
     Route::post('message', 'store');
 });

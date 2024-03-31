@@ -48,4 +48,9 @@ class VisitController extends Controller
             'total' => count(Visit::all())
         ]);
     }
+
+    public function all()
+    {
+        return response()->json(Visit::all());
+    }
 }
