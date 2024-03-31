@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "http://myportfolioapi.test"
+            "url": "https://api.juandiegows.com"
         }
     ],
     "paths": {
