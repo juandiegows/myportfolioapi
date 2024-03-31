@@ -25,7 +25,8 @@ class IpAddressController extends Controller
             'client' => $client,
             'browser' => Util::getBrowser($client),
             'system' => $os,
-            'useHttps' => $https
+            'useHttps' => $https,
+            'now' => now()
         ]);
     }
 
