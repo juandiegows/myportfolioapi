@@ -51,6 +51,7 @@ class VisitController extends Controller
 
     public function all()
     {
-        return response()->json(Visit::all());
+        $visits = Visit::orderBy('updated_at', 'desc')->get();
+        return response()->json($visits);
     }
 }
