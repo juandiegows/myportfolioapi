@@ -20,7 +20,8 @@ class VisitController extends Controller
 
         $visit = Visit::where('ip', $ipv4)
             ->whereDate('date', today())
-            ->where('client', $client)
+            ->where('ip', $ipv4)
+            ->where('browser', $browser)
             ->first();
 
         if (!$visit) {
