@@ -45,7 +45,7 @@ class VisitController extends Controller
         return response()->json([
             'visit' => $visit,
             'count' => $distinctVisitsCount,
-            'total' => count(Visit::all()->orderDesc('updated_at'))
+            'total' => count(Visit::all())
         ]);
     }
 
