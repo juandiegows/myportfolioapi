@@ -1,0 +1,425 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Usuarios",
+        "description": "Se usa para las acciones principales del usuario",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://myportfolioapi.test"
+        }
+    ],
+    "paths": {
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene todos los usuarios",
+                "operationId": "c457726701591d1183b53aa71fc13441",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/User"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/{user}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene los detalles de un usuario",
+                "operationId": "a0fa3a08f20fb611866a52d1bb2e43dd",
+                "parameters": [
+                    {
+                        "name": "users",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Usuario encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/User"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "description": "Usuario no encontrado",
+                                            "type": "object",
+                                            "example": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{user}/services": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene los servicios de un usuario",
+                "operationId": "d56314ee221ddbddaa2228bc64e88c43",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Servicios del usuario obtenidos correctamente",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Service"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "description": "Usuario no encontrado",
+                                            "type": "object",
+                                            "example": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{user}/socialMedias": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene las redes sociales de un usuario",
+                "operationId": "13840e257dc8b281b5292d670d5f6752",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Redes sociales del usuario obtenidas correctamente",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SocialMediaEntry"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "description": "Usuario no encontrado",
+                                            "type": "object",
+                                            "example": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Meta": {
+                "title": "Meta",
+                "description": "Metadatos de la respuesta JSON.",
+                "properties": {
+                    "code": {
+                        "description": "Código de estado de la respuesta.",
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "description": "Mensaje de la respuesta en inglés.",
+                        "type": "string"
+                    },
+                    "messageSpanish": {
+                        "description": "Mensaje de la respuesta en español.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Service": {
+                "title": "Service",
+                "description": "Modelo de servicio",
+                "properties": {
+                    "id": {
+                        "description": "ID del servicio",
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "description": "ID del usuario asociado al servicio",
+                        "type": "integer"
+                    },
+                    "title": {
+                        "description": "Título del servicio en inglés",
+                        "type": "string",
+                        "maxLength": 250
+                    },
+                    "spanish_title": {
+                        "description": "Título del servicio en español",
+                        "type": "string",
+                        "maxLength": 250
+                    },
+                    "description": {
+                        "description": "Descripción del servicio en inglés",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Descripción del servicio en español",
+                        "type": "string"
+                    },
+                    "active": {
+                        "description": "Indica si el servicio está activo",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "SocialMedia": {
+                "title": "SocialMedia",
+                "description": "Modelo de red social",
+                "properties": {
+                    "id": {
+                        "description": "ID de la red social",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre de la red social",
+                        "type": "string",
+                        "maxLength": 100
+                    },
+                    "link_image": {
+                        "description": "Enlace a la imagen de la red social",
+                        "type": "string",
+                        "maxLength": 200,
+                        "nullable": true
+                    },
+                    "url": {
+                        "description": "Enlace a la imagen de la red social completa",
+                        "type": "string",
+                        "maxLength": 200,
+                        "nullable": true
+                    }
+                },
+                "type": "object"
+            },
+            "SocialMediaEntry": {
+                "title": "SocialMediaEntry",
+                "description": "Entrada de red social",
+                "properties": {
+                    "id": {
+                        "description": "ID de la entrada de red social",
+                        "type": "integer"
+                    },
+                    "user_id": {
+                        "description": "ID del usuario asociado a la entrada",
+                        "type": "integer"
+                    },
+                    "social_media_id": {
+                        "description": "ID de la red social asociada a la entrada",
+                        "type": "integer"
+                    },
+                    "link": {
+                        "description": "Enlace de la red social",
+                        "type": "string"
+                    },
+                    "is_principal": {
+                        "description": "Indica si la red social es la principal del usuario",
+                        "type": "boolean"
+                    },
+                    "social_media": {
+                        "$ref": "#/components/schemas/SocialMedia"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "title": "User",
+                "description": "User object",
+                "properties": {
+                    "id": {
+                        "description": "User ID",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "description": "User's name",
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "description": "User's last name",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "User's email",
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "user_name": {
+                        "description": "User's username",
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "password": {
+                        "description": "User's password",
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "remember_token": {
+                        "description": "User's remember token",
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "created_at": {
+                        "description": "Date and time when the user was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Date and time when the user was last updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "active": {
+                        "description": "Whether the user is active or not",
+                        "type": "boolean"
+                    },
+                    "is_principal": {
+                        "description": "Whether the user is principal or not",
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

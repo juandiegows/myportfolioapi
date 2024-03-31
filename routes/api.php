@@ -13,7 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\WorkExperienceController;
 use Illuminate\Support\Facades\Route;
-
+use OpenApi\Generator as OpenApiGenerator;
 /*
 |--------------------------------------------------------------------------
 | API Routes

@@ -2,7 +2,28 @@
 
 namespace App\Models;
 
-
+/**
+ * @OA\Schema(
+ *     title="Meta",
+ *     description="Metadatos de la respuesta JSON.",
+ *     @OA\Property(
+ *         property="code",
+ *         type="integer",
+ *         format="int32",
+ *         description="Código de estado de la respuesta."
+ *     ),
+ *     @OA\Property(
+ *         property="message",
+ *         type="string",
+ *         description="Mensaje de la respuesta en inglés."
+ *     ),
+ *     @OA\Property(
+ *         property="messageSpanish",
+ *         type="string",
+ *         description="Mensaje de la respuesta en español."
+ *     )
+ * )
+ */
 class Meta
 {
 

@@ -155,6 +155,7 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'swagger_server_url' => env('APP_URL', 'http://myportfolioapi.test'),
 
     'providers' => [
 
@@ -196,6 +197,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        L5Swagger\L5SwaggerServiceProvider::class,
 
     ],
 
