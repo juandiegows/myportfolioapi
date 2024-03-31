@@ -14,9 +14,9 @@ use App\Models\User;
 
 /**
  * @OA\Info(
- *             title="API Usuarios",
+ *             title="API My Portfolio",
  *             version="1.0",
- *             description="Se usa para las acciones principales del usuario"
+ *             description="Se usa para el consumo del frontend de mi portafolio"
  * )
  *
  * @OA\Server(url="https://api.juandiegows.com")
