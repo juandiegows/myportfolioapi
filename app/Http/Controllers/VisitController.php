@@ -8,6 +8,34 @@ use Illuminate\Http\Request;
 
 class VisitController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/api/visit",
+     *     summary="Obtiene información sobre la visita actual",
+     *     tags={"Visits"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Información sobre la visita actual",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="visit",
+     *                 ref="#/components/schemas/Visit"
+     *             ),
+     *             @OA\Property(
+     *                 property="count",
+     *                 type="integer",
+     *                 description="Número de visitas distintas del día actual"
+     *             ),
+     *             @OA\Property(
+     *                 property="total",
+     *                 type="integer",
+     *                 description="Número total de visitas registradas"
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function index()
     {
         $ipv4 = request()->ip();
@@ -49,6 +77,21 @@ class VisitController extends Controller
         ]);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/visit/all",
+     *     summary="Obtiene todas las visitas registradas",
+     *     tags={"Visits"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Lista de todas las visitas registradas",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/Visit")
+     *         )
+     *     )
+     * )
+     */
     public function all()
     {
         $visits = Visit::orderBy('updated_at', 'desc')->get();

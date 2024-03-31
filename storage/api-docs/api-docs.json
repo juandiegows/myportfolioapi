@@ -809,6 +809,64 @@
                     }
                 }
             }
+        },
+        "/api/visit": {
+            "get": {
+                "tags": [
+                    "Visits"
+                ],
+                "summary": "Obtiene información sobre la visita actual",
+                "operationId": "b2a42a1ee9f5ed559dc77247fa8bce34",
+                "responses": {
+                    "200": {
+                        "description": "Información sobre la visita actual",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "visit": {
+                                            "$ref": "#/components/schemas/Visit"
+                                        },
+                                        "count": {
+                                            "description": "Número de visitas distintas del día actual",
+                                            "type": "integer"
+                                        },
+                                        "total": {
+                                            "description": "Número total de visitas registradas",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/visit/all": {
+            "get": {
+                "tags": [
+                    "Visits"
+                ],
+                "summary": "Obtiene todas las visitas registradas",
+                "operationId": "de34ec598dee333e1f1122c61b5fed42",
+                "responses": {
+                    "200": {
+                        "description": "Lista de todas las visitas registradas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Visit"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -1453,6 +1511,42 @@
                     "is_principal": {
                         "description": "Whether the user is principal or not",
                         "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "Visit": {
+                "title": "Visit",
+                "description": "Información sobre la visita",
+                "properties": {
+                    "ip": {
+                        "description": "Dirección IP del visitante",
+                        "type": "string"
+                    },
+                    "browser": {
+                        "description": "Navegador utilizado",
+                        "type": "string"
+                    },
+                    "useHttps": {
+                        "description": "Indica si se utiliza HTTPS",
+                        "type": "boolean"
+                    },
+                    "client": {
+                        "description": "Información del cliente",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "Fecha de la visita",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "system": {
+                        "description": "Sistema operativo utilizado",
+                        "type": "string"
+                    },
+                    "count": {
+                        "description": "Número de visitas del mismo día",
+                        "type": "integer"
                     }
                 },
                 "type": "object"
