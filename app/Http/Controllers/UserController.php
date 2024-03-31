@@ -61,9 +61,9 @@ class UserController extends Controller
     {
         try {
             $meta = new Meta();
-            $meta->code = 500;
-            $meta->message = "Internal Server Error";
-            $meta->messageSpanish = "Error interno del servidor";
+            $meta->code = 200;
+            $meta->message = "OK";
+            $meta->messageSpanish = "OK";
             return response()->json(new Response(User::get(), $meta));
         } catch (\Throwable $th) {
             return response()->json($meta, 500);
