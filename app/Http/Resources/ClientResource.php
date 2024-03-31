@@ -8,11 +8,66 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ClientResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
-     */
+   /**
+ * @OA\Schema(
+ *     schema="ClientInfo",
+ *     title="Client DTO",
+ *     description="Array de datos de servicio",
+ *     @OA\Property(
+ *         property="id",
+ *         type="integer",
+ *         description="ID del servicio"
+ *     ),
+ *     @OA\Property(
+ *         property="name",
+ *         type="string",
+ *         description="Nombre del servicio"
+ *     ),
+ *     @OA\Property(
+ *         property="description",
+ *         type="string",
+ *         description="Descripción del servicio en inglés"
+ *     ),
+ *     @OA\Property(
+ *         property="spanish_description",
+ *         type="string",
+ *         description="Descripción del servicio en español"
+ *     ),
+ *     @OA\Property(
+ *         property="url_logo",
+ *         type="string",
+ *         description="URL del logotipo del servicio"
+ *     ),
+ *     @OA\Property(
+ *         property="link_site",
+ *         type="string",
+ *         description="Enlace al sitio web del servicio"
+ *     ),
+ *     @OA\Property(
+ *         property="year",
+ *         type="integer",
+ *         description="Año del servicio"
+ *     ),
+ *     @OA\Property(
+ *         property="topics",
+ *         type="array",
+ *         @OA\Items(type="string"),
+ *         description="Temas del servicio en inglés"
+ *     ),
+ *     @OA\Property(
+ *         property="topics_spanish",
+ *         type="array",
+ *         @OA\Items(type="string"),
+ *         description="Temas del servicio en español"
+ *     ),
+ *     @OA\Property(
+ *         property="count_participants",
+ *         type="integer",
+ *         description="Cantidad de participantes del servicio"
+ *     )
+ * )
+ */
+
     public function toArray(Request $request): array
     {
         return [

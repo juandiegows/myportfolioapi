@@ -145,7 +145,7 @@ class UserController extends Controller
     /**
      * @OA\Get(
      *     path="/api/users/{user}/services",
-     *     summary="Obtiene los servicios de un usuario",
+     *     summary="Obtiene los servicios que ofrece de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
      *         name="user",
@@ -277,6 +277,50 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * @OA\Get(
+     *     path="/api/user/{user}/professions",
+     *     summary="Obtiene las profesiones de un usuario",
+     *     tags={"Users"},
+     *     @OA\Parameter(
+     *         name="user",
+     *         in="path",
+     *         description="ID o nombre de usuario",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             ),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/ProfessionUser")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Usuario no encontrado",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             )
+     *         )
+     *     )
+     * )
+     */
+
     public function professions($user)
     {
         if (is_numeric($user)) {
@@ -295,7 +339,49 @@ class UserController extends Controller
             return response()->json(new Response($user, $meta), 404);
         }
     }
-
+    /**
+     * @OA\Get(
+     *     path="/api/users/{user}/clients",
+     *     summary="Obtiene todos los clientes de un usuario",
+     *     tags={"Users"},
+     *     @OA\Parameter(
+     *         name="user",
+     *         in="path",
+     *         description="ID o nombre de usuario del usuario",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             ),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/ClientInfo")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Usuario no encontrado",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function clients($user)
     {
         if (is_numeric($user)) {
@@ -314,6 +400,49 @@ class UserController extends Controller
             return response()->json(new Response(null, $meta), 404);
         }
     }
+    /**
+     * @OA\Get(
+     *     path="/api/users/{user}/skills",
+     *     summary="Obtiene las habilidades de un usuario",
+     *     tags={"Users"},
+     *     @OA\Parameter(
+     *         name="user",
+     *         in="path",
+     *         description="ID o nombre de usuario del usuario",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             ),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/TopicResource")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             )
+     *         )
+     *     )
+     * )
+     */
 
     public function skills($user)
     {

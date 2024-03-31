@@ -123,7 +123,7 @@
                 "tags": [
                     "Users"
                 ],
-                "summary": "Obtiene los servicios de un usuario",
+                "summary": "Obtiene los servicios que ofrece de un usuario",
                 "operationId": "d56314ee221ddbddaa2228bc64e88c43",
                 "parameters": [
                     {
@@ -243,10 +243,294 @@
                     }
                 }
             }
+        },
+        "/api/user/{user}/professions": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene las profesiones de un usuario",
+                "operationId": "411f3418893c46f7dc435cef91af64ec",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ProfessionUser"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{user}/clients": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene todos los clientes de un usuario",
+                "operationId": "a948d2cbeb9c7a0c16c752f1e5c25b52",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ClientInfo"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{user}/skills": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene las habilidades de un usuario",
+                "operationId": "db99f6aea8174985e27542327e7a73a9",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/TopicResource"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
         "schemas": {
+            "ClientInfo": {
+                "title": "Client DTO",
+                "description": "Array de datos de servicio",
+                "properties": {
+                    "id": {
+                        "description": "ID del servicio",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre del servicio",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Descripción del servicio en inglés",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Descripción del servicio en español",
+                        "type": "string"
+                    },
+                    "url_logo": {
+                        "description": "URL del logotipo del servicio",
+                        "type": "string"
+                    },
+                    "link_site": {
+                        "description": "Enlace al sitio web del servicio",
+                        "type": "string"
+                    },
+                    "year": {
+                        "description": "Año del servicio",
+                        "type": "integer"
+                    },
+                    "topics": {
+                        "description": "Temas del servicio en inglés",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "topics_spanish": {
+                        "description": "Temas del servicio en español",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "count_participants": {
+                        "description": "Cantidad de participantes del servicio",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "TopicResource": {
+                "title": "TopicResource",
+                "description": "Recurso para un tema",
+                "properties": {
+                    "id": {
+                        "description": "ID del tema",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre del tema",
+                        "type": "string"
+                    },
+                    "spanish_name": {
+                        "description": "Nombre del tema en español",
+                        "type": "string"
+                    },
+                    "link_image": {
+                        "description": "Enlace a la imagen del tema",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "description": {
+                        "description": "Descripción del tema",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Descripción del tema en español",
+                        "type": "string"
+                    },
+                    "topic_master": {
+                        "$ref": "#/components/schemas/TopicResource"
+                    },
+                    "type_topic": {
+                        "$ref": "#/components/schemas/TypeTopicResource"
+                    }
+                },
+                "type": "object"
+            },
+            "TypeTopicResource": {
+                "title": "TypeTopicResource",
+                "description": "Recurso para un tipo de tema",
+                "properties": {
+                    "id": {
+                        "description": "ID del tipo de tema",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre del tipo de tema",
+                        "type": "string"
+                    },
+                    "spanish_name": {
+                        "description": "Nombre del tipo de tema en español",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "Meta": {
                 "title": "Meta",
                 "description": "Metadatos de la respuesta JSON.",
@@ -263,6 +547,39 @@
                     "messageSpanish": {
                         "description": "Mensaje de la respuesta en español.",
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ProfessionUser": {
+                "title": "Profession",
+                "description": "Modelo de profesión",
+                "properties": {
+                    "id": {
+                        "description": "ID de la profesión",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre de la profesión en inglés",
+                        "type": "string"
+                    },
+                    "name_spanish": {
+                        "description": "Nombre de la profesión en español",
+                        "type": "string"
+                    },
+                    "pivot": {
+                        "description": "Información adicional de la relación entre usuario y profesión",
+                        "properties": {
+                            "user_id": {
+                                "description": "ID del usuario relacionado",
+                                "type": "integer"
+                            },
+                            "profession_id": {
+                                "description": "ID de la profesión relacionada",
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
                     }
                 },
                 "type": "object"
