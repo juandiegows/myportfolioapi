@@ -11,6 +11,57 @@
         }
     ],
     "paths": {
+        "/api/ip-address": {
+            "get": {
+                "tags": [
+                    "IP Address"
+                ],
+                "summary": "Obtiene la información de la dirección IP del cliente",
+                "operationId": "6e5c4e393cabc0c2ad5a8a59a10f7111",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "ipv4": {
+                                            "description": "Dirección IPv4 del cliente",
+                                            "type": "string"
+                                        },
+                                        "ipv6": {
+                                            "description": "Dirección IPv6 del cliente",
+                                            "type": "string"
+                                        },
+                                        "client": {
+                                            "description": "Información del cliente, como el agente de usuario",
+                                            "type": "string"
+                                        },
+                                        "browser": {
+                                            "description": "Navegador utilizado por el cliente",
+                                            "type": "string"
+                                        },
+                                        "system": {
+                                            "description": "Sistema operativo del cliente",
+                                            "type": "string"
+                                        },
+                                        "useHttps": {
+                                            "description": "Indica si la solicitud se realizó a través de HTTPS",
+                                            "type": "boolean"
+                                        },
+                                        "now": {
+                                            "description": "Fecha y hora actuales",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/users": {
             "get": {
                 "tags": [
