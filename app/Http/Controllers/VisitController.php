@@ -36,10 +36,9 @@ class VisitController extends Controller
         } else {
             if ($now->diffInMinutes($visit->updated_at) >= 30) {
                 $visit->count += 1;
-                $visit->save();
             }
         }
-
+        $visit->save();
         $distinctVisitsCount = Visit::distinct('ip', 'date')
             ->count();
 
