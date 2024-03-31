@@ -43,5 +43,36 @@ class ProjectSeeder extends Seeder
             'user_id' => 1,
             'project_id' => $project->id
         ]);
+
+
+        $image = Image::firstOrCreate([
+            'name' => "My portfolio",
+            'name_spanish' => "Mi portafolio",
+            'link' =>  "img/projects/portfolioAPI/portfolioAPI.png",
+            'link_900' => "img/projects/portfolioAPI/portfolioAPI-900.png",
+            'link_700' => "img/projects/portfolioAPI/portfolioAPI-700.png",
+            'link_300' => "img/projects/portfolioAPI/portfolioAPI-300.png",
+        ]);
+
+        $project = Project::firstOrCreate([
+            'client_id' => null,
+            'principal_project_id' =>  $project->id,
+            'front_page_id' => $image->id,
+            'title' => 'My portfolio API',
+            'spanish_title' => 'Mi portafolio API',
+            'short_description' => 'API developed with Laravel and MySQL database',
+            'spanish_short_description' => 'API desarrollada con Laravel y una base de datos MySQL',
+            'description' => '',
+            'spanish_description' => '',
+            'view_link' => 'https://api.juandiegows.com/api/docs',
+            'download_link' => 'https://github.com/juandiegows/myportfolioapi',
+            'video_link' => null,
+            'date' => '2024-03-14'
+        ]);
+
+        ProjectUser::firstOrCreate([
+            'user_id' => 1,
+            'project_id' => $project->id
+        ]);
     }
 }
