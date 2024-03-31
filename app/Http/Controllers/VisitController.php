@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Action\Helpers\Util;
+use App\Action\helpers\Util;
 use App\Models\Visit;
 use Illuminate\Http\Request;
 
@@ -34,7 +34,7 @@ class VisitController extends Controller
             $visit->system = $os;
             $visit->save();
         } else {
-            if ($now->diffInMinutes($visit->created_at) >= 30) {
+            if ($now->diffInMinutes($visit->updated_at) >= 30) {
                 $visit->count += 1;
                 $visit->save();
             }

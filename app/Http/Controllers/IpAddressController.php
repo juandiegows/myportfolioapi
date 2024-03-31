@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Action\Helpers\Util;
+use App\Action\helpers\Util;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
