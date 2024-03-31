@@ -19,7 +19,7 @@ use App\Models\User;
  *             description="Se usa para las acciones principales del usuario"
  * )
  *
- * @OA\Server(url="http://myportfolioapi.test")
+ * @OA\Server(url="https://api.juandiegows.com")
  */
 class UserController extends Controller
 {
