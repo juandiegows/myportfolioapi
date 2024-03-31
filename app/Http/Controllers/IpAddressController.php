@@ -14,16 +14,17 @@ class IpAddressController extends Controller
     {
 
 
-        $ipv4 =$request->ip();
+        $ipv4 = $request->ip();
         $ipv6 = $request->getClientIp();
         $client = $request->userAgent() ?: '';
         $https = $request->secure();
-
+        $os = Util::getOperatingSystem($client);
         return response()->json([
             'ipv4' => $ipv4,
             'ipv6' => $ipv6,
             'client' => $client,
             'browser' => Util::getBrowser($client),
+            'system' => $os,
             'useHttps' => $https
         ]);
     }
