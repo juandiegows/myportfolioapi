@@ -417,6 +417,238 @@
                     }
                 }
             }
+        },
+        "/api/user/{user}/works": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene todas las experiencias laborales de un usuario",
+                "operationId": "40972fbd0499ca4cf15961f746b31adc",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/WorkResource"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{user}/educations": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene la educación de un usuario",
+                "operationId": "38256959ea1785560970c9b7df93b1dc",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/EducationResource"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/users/{user}/projects": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene todos los proyectos de un usuario",
+                "operationId": "5c5bae15cf452da695d34628142b615f",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ProjectResource"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/{user}/posts": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene las publicaciones de un usuario",
+                "operationId": "51f77b16633a940e3bacdd358361672a",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/PostResource"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -474,6 +706,249 @@
                 },
                 "type": "object"
             },
+            "EducationResource": {
+                "title": "EducationResource",
+                "description": "Modelo de recurso de educación",
+                "properties": {
+                    "id": {
+                        "description": "ID de la educación",
+                        "type": "integer"
+                    },
+                    "entity": {
+                        "description": "Entidad educativa",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "Título de la educación",
+                        "type": "string"
+                    },
+                    "spanish_title": {
+                        "description": "Título de la educación en español",
+                        "type": "string"
+                    },
+                    "title_education": {
+                        "description": "Título de la educación",
+                        "type": "string"
+                    },
+                    "spanish_title_education": {
+                        "description": "Título de la educación en español",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Descripción de la educación",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Descripción de la educación en español",
+                        "type": "string"
+                    },
+                    "certificate_url": {
+                        "description": "URL del certificado de la educación",
+                        "type": "string",
+                        "format": "url",
+                        "nullable": true
+                    },
+                    "start_date": {
+                        "description": "Fecha de inicio de la educación",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "description": "Fecha de finalización de la educación",
+                        "type": "string",
+                        "format": "date"
+                    }
+                },
+                "type": "object"
+            },
+            "ImageResource": {
+                "title": "ImageResource",
+                "description": "Modelo de recurso de imagen",
+                "properties": {
+                    "id": {
+                        "description": "ID de la imagen",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre de la imagen",
+                        "type": "string"
+                    },
+                    "name_spanish": {
+                        "description": "Nombre de la imagen en español",
+                        "type": "string"
+                    },
+                    "link": {
+                        "description": "Enlace completo de la imagen",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "link_900": {
+                        "description": "Enlace de la imagen con ancho de 900px",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "link_700": {
+                        "description": "Enlace de la imagen con ancho de 700px",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "link_300": {
+                        "description": "Enlace de la imagen con ancho de 300px",
+                        "type": "string",
+                        "format": "url"
+                    }
+                },
+                "type": "object"
+            },
+            "PostResource": {
+                "title": "PostResource",
+                "description": "Modelo de publicación",
+                "properties": {
+                    "id": {
+                        "description": "ID de la publicación",
+                        "type": "integer"
+                    },
+                    "title": {
+                        "description": "Título de la publicación en inglés",
+                        "type": "string"
+                    },
+                    "spanish_title": {
+                        "description": "Título de la publicación en español",
+                        "type": "string"
+                    },
+                    "topics": {
+                        "description": "Temas de la publicación en inglés",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "topics_spanish": {
+                        "description": "Temas de la publicación en español",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "url_image": {
+                        "description": "URL de la imagen asociada a la publicación",
+                        "type": "string",
+                        "format": "url"
+                    },
+                    "link": {
+                        "description": "Enlace asociado a la publicación",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "Fecha de la publicación",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "created_at": {
+                        "description": "Fecha de creación de la publicación",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Fecha de actualización de la publicación",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            },
+            "ProfessionResource": {
+                "title": "ProfessionResource",
+                "description": "Modelo de profesión",
+                "properties": {
+                    "id": {
+                        "description": "ID de la profesión",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Nombre de la profesión en inglés",
+                        "type": "string"
+                    },
+                    "name_spanish": {
+                        "description": "Nombre de la profesión en español",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ProjectResource": {
+                "title": "ProjectResource",
+                "description": "Modelo de recurso de proyecto",
+                "properties": {
+                    "id": {
+                        "description": "ID del proyecto",
+                        "type": "integer"
+                    },
+                    "client_id": {
+                        "description": "ID del cliente asociado al proyecto",
+                        "type": "integer"
+                    },
+                    "principal_project_id": {
+                        "description": "ID del proyecto principal",
+                        "type": "integer"
+                    },
+                    "front_page": {
+                        "$ref": "#/components/schemas/ImageResource"
+                    },
+                    "title": {
+                        "description": "Título del proyecto",
+                        "type": "string"
+                    },
+                    "spanish_title": {
+                        "description": "Título del proyecto en español",
+                        "type": "string"
+                    },
+                    "short_description": {
+                        "description": "Breve descripción del proyecto",
+                        "type": "string"
+                    },
+                    "spanish_short_description": {
+                        "description": "Breve descripción del proyecto en español",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Descripción detallada del proyecto",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Descripción detallada del proyecto en español",
+                        "type": "string"
+                    },
+                    "view_link": {
+                        "description": "Enlace de visualización del proyecto",
+                        "type": "string"
+                    },
+                    "download_link": {
+                        "description": "Enlace de descarga del proyecto",
+                        "type": "string"
+                    },
+                    "video_link": {
+                        "description": "Enlace del video del proyecto",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "Fecha del proyecto",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "created_at": {
+                        "description": "Fecha de creación del proyecto",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Fecha de actualización del proyecto",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            },
             "TopicResource": {
                 "title": "TopicResource",
                 "description": "Recurso para un tema",
@@ -527,6 +1002,67 @@
                     "spanish_name": {
                         "description": "Nombre del tipo de tema en español",
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "WorkResource": {
+                "title": "WorkResource",
+                "description": "Modelo de recurso para experiencia laboral",
+                "properties": {
+                    "id": {
+                        "description": "ID de la experiencia laboral",
+                        "type": "integer"
+                    },
+                    "logo": {
+                        "description": "URL del logo de la empresa",
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "business": {
+                        "description": "Nombre del negocio o empresa",
+                        "type": "string"
+                    },
+                    "profession": {
+                        "$ref": "#/components/schemas/ProfessionResource"
+                    },
+                    "description": {
+                        "description": "Descripción de la experiencia laboral",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Descripción en español de la experiencia laboral",
+                        "type": "string"
+                    },
+                    "certificate_url": {
+                        "description": "URL del certificado de la experiencia laboral",
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "topics": {
+                        "description": "Temas relacionados a la experiencia laboral",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "topics_spanish": {
+                        "description": "Temas relacionados a la experiencia laboral en español",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "start_date": {
+                        "description": "Fecha de inicio de la experiencia laboral",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "description": "Fecha de finalización de la experiencia laboral",
+                        "type": "string",
+                        "format": "date",
+                        "nullable": true
                     }
                 },
                 "type": "object"

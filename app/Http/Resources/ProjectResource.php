@@ -8,10 +8,96 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class ProjectResource extends JsonResource
 {
     /**
-     * Transform the resource into an array.
-     *
-     * @return array<string, mixed>
+     * @OA\Schema(
+     *     schema="ProjectResource",
+     *     title="ProjectResource",
+     *     description="Modelo de recurso de proyecto",
+     *     @OA\Property(
+     *         property="id",
+     *         type="integer",
+     *         description="ID del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="client_id",
+     *         type="integer",
+     *         description="ID del cliente asociado al proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="principal_project_id",
+     *         type="integer",
+     *         description="ID del proyecto principal"
+     *     ),
+     *     @OA\Property(
+     *         property="front_page",
+     *         ref="#/components/schemas/ImageResource",
+     *         description="Página frontal del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="title",
+     *         type="string",
+     *         description="Título del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="spanish_title",
+     *         type="string",
+     *         description="Título del proyecto en español"
+     *     ),
+     *     @OA\Property(
+     *         property="short_description",
+     *         type="string",
+     *         description="Breve descripción del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="spanish_short_description",
+     *         type="string",
+     *         description="Breve descripción del proyecto en español"
+     *     ),
+     *     @OA\Property(
+     *         property="description",
+     *         type="string",
+     *         description="Descripción detallada del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="spanish_description",
+     *         type="string",
+     *         description="Descripción detallada del proyecto en español"
+     *     ),
+     *     @OA\Property(
+     *         property="view_link",
+     *         type="string",
+     *         description="Enlace de visualización del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="download_link",
+     *         type="string",
+     *         description="Enlace de descarga del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="video_link",
+     *         type="string",
+     *         description="Enlace del video del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="date",
+     *         type="string",
+     *         format="date",
+     *         description="Fecha del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="created_at",
+     *         type="string",
+     *         format="date-time",
+     *         description="Fecha de creación del proyecto"
+     *     ),
+     *     @OA\Property(
+     *         property="updated_at",
+     *         type="string",
+     *         format="date-time",
+     *         description="Fecha de actualización del proyecto"
+     *     )
+     * )
      */
+
     public function toArray(Request $request): array
     {
         return [
