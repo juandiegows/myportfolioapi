@@ -151,6 +151,7 @@
                place-content: center;
            }
 
+
            .main {
                width: 100%;
                height: 90%;
@@ -158,6 +159,7 @@
                background-color: #0b0012;
                border-radius: 10px;
                padding: 15px;
+               box-sizing: border-box;
            }
 
            p {
@@ -169,6 +171,20 @@
                text-transform: capitalize;
                font-weight: 900;
                color: #fc804a;
+           }
+
+           @media(max-width : 500px) {
+
+               .content {
+                   min-height: 0;
+                   padding: 0%;
+               }
+
+               .main {
+                   width: 90%;
+                   margin: auto;
+                   padding: 20px;
+               }
            }
 
        </style>
