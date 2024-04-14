@@ -153,8 +153,8 @@
 
 
            .main {
-               width: 90%;
-               margin: auto;
+
+               margin: 20px auto;
                padding: 20px;
                background-color: #0b0012;
                border-radius: 10px;
