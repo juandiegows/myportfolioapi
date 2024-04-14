@@ -208,7 +208,7 @@
                font-family: "Bungee Spice", sans-serif !important;
                font-weight: 400;
                font-style: normal;
-               font-size: 30px;
+               font-size: 25px;
                margin-bottom: 30px;
            }
 
