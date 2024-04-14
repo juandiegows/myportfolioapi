@@ -154,6 +154,7 @@
 
 
            .main {
+               width: 60vw;
                margin: 20px auto;
                padding: 20px;
                background-color: #0b0012;
@@ -174,8 +175,6 @@
                font-weight: 900;
                color: #fc804a;
            }
-
-
 
        </style>
 
