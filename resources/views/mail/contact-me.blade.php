@@ -175,6 +175,9 @@
                font-weight: 900;
                color: #fc804a;
            }
+           .message{
+            text-align: justify;
+           }
 
        </style>
 
@@ -187,7 +190,7 @@
                <p> {{ $name ?? "Juan Diego Mejia Maestre"  }} quiere ponerse en contacto contigo,</p>
                <p> <b class="titulo"> asunto :</b> {{ $subject ?? 'prueba de correo'  }}</p>
                <p> <b class="titulo"> Email :</b> {{ $email ?? 'jdmeji@misena.edu.co' }}</p>
-               <p> <b class="titulo"> Mensaje : </b> {{ $messageText ?? 'este es el mensaje del correo' }}</p>
+               <p class="message"> <b class="titulo"> Mensaje : </b> {{ $messageText ?? 'este es el mensaje del correo' }}</p>
                <p> <b class="titulo"> Fecha :</b> {{ $created_at ?? now() }}</p>
            </div>
 
