@@ -173,7 +173,7 @@
                color: #fc804a;
            }
 
-           @media(max-width : 500px) {
+           @media screen and (max-width : 500px) {
 
                .content {
                    min-height: 0;
