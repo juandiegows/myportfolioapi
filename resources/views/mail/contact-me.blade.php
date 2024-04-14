@@ -197,8 +197,13 @@
                margin-bottom: 30px;
            }
 
+           body {
+               font-family: 'Montserrat', sans-serif !important;
+           }
+
+
            .bungee-spice-regular {
-               font-family: "Bungee Spice", sans-serif;
+               font-family: "Bungee Spice", sans-serif !important;
                font-weight: 400;
                font-style: normal;
                font-size: 30px;
