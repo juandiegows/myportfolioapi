@@ -144,7 +144,7 @@
                box-sizing: border-box;
                background: #92a8d1;
                width: 100%;
-               min-height: 500px;
+               min-height: 0;
                height: 100%;
                padding: 0% 20%;
                display: grid;
@@ -153,9 +153,9 @@
 
 
            .main {
-               width: 100%;
-               height: 90%;
-               margin: 30px;
+               width: 90%;
+               margin: auto;
+               padding: 20px;
                background-color: #0b0012;
                border-radius: 10px;
                padding: 15px;
@@ -173,7 +173,7 @@
                color: #fc804a;
            }
 
-   
+
 
        </style>
 
