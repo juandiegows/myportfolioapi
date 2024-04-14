@@ -149,11 +149,11 @@
                padding: 0% 20%;
                display: grid;
                place-content: center;
+               font-family: "Montserrat", sans-serif;
            }
 
 
            .main {
-
                margin: 20px auto;
                padding: 20px;
                background-color: #0b0012;
@@ -165,6 +165,8 @@
            p {
                margin: 5px 0;
                color: white;
+               text-decoration-color: white;
+               text-decoration: none;
            }
 
            .titulo {
