@@ -8,6 +8,8 @@
        <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+       <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
        <style>
            html,
            body,
@@ -175,8 +177,32 @@
                font-weight: 900;
                color: #fc804a;
            }
-           .message{
-            text-align: justify;
+
+           .message {
+               text-align: justify;
+           }
+
+           .saludo {
+               font-size: 20px;
+               margin-bottom: 20px;
+           }
+
+           .name,
+           .saludo>b {
+               font-weight: 500;
+               color: #fc804a;
+           }
+
+           .intro {
+               margin-bottom: 30px;
+           }
+
+           .bungee-spice-regular {
+               font-family: "Bungee Spice", sans-serif;
+               font-weight: 400;
+               font-style: normal;
+               font-size: 30px;
+               margin-bottom: 30px;
            }
 
        </style>
@@ -186,8 +212,9 @@
 
        <div class="content">
            <div class="main">
-               <p>hola, Mr. Juan Diego</p>
-               <p> {{ $name ?? "Juan Diego Mejia Maestre"  }} quiere ponerse en contacto contigo,</p>
+               <h1 class="bungee-spice-regular">JuanDiegoWS</h1>
+               <p class="saludo" style=" font-family: 'Bungee Spice', sans-serif">hola, <b>Mr. Juan Diego</b> </p>
+               <p class="intro"> <b class="name"> {{ $name ?? "Juan Diego Mejia Maestre"  }} </b> quiere ponerse en contacto contigo,</p>
                <p> <b class="titulo"> asunto :</b> {{ $subject ?? 'prueba de correo'  }}</p>
                <p> <b class="titulo"> Email :</b> {{ $email ?? 'jdmeji@misena.edu.co' }}</p>
                <p class="message"> <b class="titulo"> Mensaje : </b> {{ $messageText ?? 'este es el mensaje del correo' }}</p>
