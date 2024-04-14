@@ -173,19 +173,7 @@
                color: #fc804a;
            }
 
-           @media screen and (max-width : 500px) {
-
-               .content {
-                   min-height: 0;
-                   padding: 0%;
-               }
-
-               .main {
-                   width: 90%;
-                   margin: auto;
-                   padding: 20px;
-               }
-           }
+   
 
        </style>
 
