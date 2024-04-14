@@ -171,6 +171,7 @@
                color: white;
                text-decoration-color: white;
                text-decoration: none;
+               font-family: 'Montserrat', sans-serif !important;
            }
 
            .titulo {
