@@ -153,10 +153,11 @@
 
            .main {
                width: 100%;
-               min-width: 50%;
+               height: 100%;
                background-color: #0150bc;
-               padding: 5%;
                border-radius: 10px;
+               padding: 5%;
+               border : 1px solid red;
            }
 
            p {
