@@ -15,10 +15,12 @@ class ConfirmMessageCreated extends Mailable
     use Queueable, SerializesModels;
 
     public $message;
+    public $mail;
 
-    public function __construct(Message $message)
+    public function __construct(Message $message, $mail)
     {
         $this->message = $message;
+        $this->mail = $mail;
     }
 
     /**
@@ -42,6 +44,7 @@ class ConfirmMessageCreated extends Mailable
                 'name' => $this->message->name,
                 'subject' => $this->message->subject,
                 'email' => $this->message->email,
+                'emailSecond' => $this->mail,
                 'created_at' => $this->message->created_at,
                 'messageText' => $this->message->message,
                 ]

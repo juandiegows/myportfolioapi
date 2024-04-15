@@ -102,7 +102,8 @@ class MessageController extends Controller
                 ->send(new MessageCreated($message));
 
                 Mail::to($message->email)
-                ->send(new ConfirmMessageCreated($message));
+                ->cc(Config::get('app.MAIL'))
+                ->send(new ConfirmMessageCreated($message,Config::get('app.MAIL')));
 
             return response()->json([
                 'meta' => [
