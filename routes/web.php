@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/email', function () {
     return view('mail.contact-me');
 });
+Route::get('/emailc', function () {
+    return view('mail.confirm');
+});

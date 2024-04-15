@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ConfirmMessageCreated;
 use App\Mail\MessageCreated;
 use App\Models\Message;
 use Illuminate\Http\Request;
@@ -99,6 +100,10 @@ class MessageController extends Controller
             $message = Message::create($request->all());
             Mail::to(Config::get('app.MAIL'))
                 ->send(new MessageCreated($message));
+
+                Mail::to($message->email)
+                ->send(new ConfirmMessageCreated($message));
+
             return response()->json([
                 'meta' => [
                     'href' => $request->url(),
