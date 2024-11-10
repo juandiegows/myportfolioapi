@@ -60,7 +60,7 @@
                             </div>
                         </x-dropdown-link>
 
-                        <x-dropdown-link wire:click="" class="cursor-pointer text-lg">
+                        <x-dropdown-link wire:click="deleteSocialMedia({{ $socialMedia->id }})" class="cursor-pointer text-lg">
                             <div class="flex items-center  gap-2 text-lg">
                                 <svg class="w-6 h-6 hover:scale-75 text-gray-500 dark:text-gray-400" fill="#d30303" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 456.686 456.686" xml:space="preserve" stroke="#d30303">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -91,6 +91,7 @@
     </div>
 
     <x-modal wire:model="managerSocialMedia">
+        @if($managerSocialMedia)
         <div class="text-white p-4 ">
             <h1 class="my-4 text-[2rem]">Agregar Red social</h1>
             <div>
@@ -120,6 +121,22 @@
                 </x-button>
             </div>
         </div>
+        @endif
     </x-modal>
+
+    <x-dialog-modal wire:model="deleteSocialMedia" model="deleteSocialMedia">
+        @slot('title')
+        Confirmar Eliminacion de red social {{ $dataSocialMedia['name'] }}
+        @endslot
+        @slot('content')
+        <p>¿Desea eliminar esta red social "{{ $dataSocialMedia['name'] }}" ? Esta acción no se puede revertir </p>
+        @endslot
+        @slot('footer')
+        <div class=" flex gap-2">
+            <x-danger-button wire:click="$set('deleteSocialMedia', false)">Cancelar</x-danger-button>
+            <x-button wire:click="deleteSocialMedia({{ $dataSocialMedia['id'] ?? 0 }}, true)" >Eliminar</x-button>
+        </div>
+        @endslot
+    </x-dialog-modal>
 
 </div>
