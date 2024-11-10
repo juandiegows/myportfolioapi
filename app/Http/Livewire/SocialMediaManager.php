@@ -14,7 +14,7 @@ class SocialMediaManager extends Component
 {
 
     use WithPagination, WithFileUploads;
-    public $perPage = 100;
+    public $perPage = 10;
     public $managerSocialMedia = false;
   
     public $dataSocialMedia = [
