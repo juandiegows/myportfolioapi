@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\SocialMediaManager;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/manager/social-media', SocialMediaManager::class)->name('social-media');
 });
