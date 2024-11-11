@@ -14,13 +14,12 @@ $maxWidth = [
 @endphp
 
 <div
-    x-data="{ show: @entangle($attributes->wire('model')) }"
+    x-data="{ show: @entangle($attributes->wire('model')).defer }"
     x-on:close.stop="show = false"
     x-on:keydown.escape.window="show = false"
     x-show="show"
     id="{{ $id }}"
-    {{ $attributes->merge(['class' => 'jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50']) }}
-   
+    {{ $attributes->merge(['class' => 'jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50']) }} 
     style="display: none;"
 >
     <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"

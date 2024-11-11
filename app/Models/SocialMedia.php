@@ -58,4 +58,8 @@ class SocialMedia extends Model
         }
     
     }
+
+    public function socialMediaUser(){
+        return $this->hasMany(SocialMediaUser::class);
+    }
 }

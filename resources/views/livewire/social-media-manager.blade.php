@@ -46,7 +46,7 @@
 
                     <x-slot name="content">
 
-                        <x-dropdown-link wire:click="" class="cursor-pointer text-lg">
+                        <x-dropdown-link wire:click="editSocialMedia({{ $socialMedia->id }})" class="cursor-pointer text-lg">
                             <div class="flex items-center text-lg gap-2">
                                 <svg class="w-6 h-6 hover:scale-75 text-gray-500 dark:text-gray-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ededed">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -90,17 +90,25 @@
 
     </div>
 
-    <x-modal wire:model="managerSocialMedia">
+    <x-modal wire:model="managerSocialMedia" >
         @if($managerSocialMedia)
         <div class="text-white p-4 ">
+            @if (isset($dataSocialMedia['id']))
+            <h1 class="my-4 text-[2rem]">Actualizar Red social</h1>
+            @else
             <h1 class="my-4 text-[2rem]">Agregar Red social</h1>
+            @endif
+         
             <div>
 
                 <div class="my-4" title="click para Seleccionar un icono">
                     <x-label value="Icono" class="my-2" />
                     <label for="select-svg">
-                        @if ($dataSocialMedia['icon'])
+
+                        @if (isset($dataSocialMedia['icon']) && $dataSocialMedia['icon'])
                         <img src="{{ $dataSocialMedia['icon']->temporaryUrl() }}" alt="SVG Preview" class="w-20 h-20 object-contain" />
+                        @elseif(isset($dataSocialMedia['link_image']) && $dataSocialMedia['link_image'])
+                        <img src="{{ $dataSocialMedia['url'] }}" alt="SVG Preview" class="w-20 h-20 object-contain" />
                         @else
                         <img src="{{ asset('img/image-svg.svg') }}" alt="SVG Preview" class="w-20 h-20 object-contain" />
                         @endif
@@ -112,19 +120,27 @@
             </div>
             <div>
                 <x-label value="Nombre" />
-                <x-input class="w-full my-2" wire:model="dataSocialMedia.name" placeholder="Ingrese el nombre de la red social" />
+                <x-input class="w-full my-2" wire:model.defer="dataSocialMedia.name" placeholder="Ingrese el nombre de la red social" />
                 <x-input-error for="dataSocialMedia.name" />
             </div>
             <div class="flex justify-end my-2">
+                @if (isset($dataSocialMedia['id']))
+                <x-button wire:click="update">
+                    Actualizar Red social
+                </x-button>
+
+                @else
                 <x-button wire:click="store">
                     Agregar Red social
                 </x-button>
+
+                @endif
             </div>
         </div>
         @endif
     </x-modal>
 
-    <x-dialog-modal wire:model="deleteSocialMedia" model="deleteSocialMedia">
+    <x-dialog-modal wire:model="deleteSocialMedia">
         @slot('title')
         Confirmar Eliminacion de red social {{ $dataSocialMedia['name'] }}
         @endslot
@@ -134,7 +150,7 @@
         @slot('footer')
         <div class=" flex gap-2">
             <x-danger-button wire:click="$set('deleteSocialMedia', false)">Cancelar</x-danger-button>
-            <x-button wire:click="deleteSocialMedia({{ $dataSocialMedia['id'] ?? 0 }}, true)" >Eliminar</x-button>
+            <x-button wire:click="deleteSocialMedia({{ $dataSocialMedia['id'] ?? 0 }}, true)">Eliminar</x-button>
         </div>
         @endslot
     </x-dialog-modal>

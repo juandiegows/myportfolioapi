@@ -93,3 +93,29 @@
         </x-button>
     </x-slot>
 </x-form-section>
+
+<x-section-border />
+
+<x-action-section >
+    <x-slot name="title">
+        {{ __('Mis Redes') }}
+    </x-slot>
+
+    <x-slot name="description">
+        {{ __('Actualizar mis redes sociales.') }}
+    </x-slot>
+
+    <x-slot name="content">
+        @livewire('manager-my-social-media', ['userId' => $this->user->id])
+    </x-slot>
+
+    <x-slot name="actions">
+        <x-action-message class="mr-3" on="saved">
+            {{ __('Saved.') }}
+        </x-action-message>
+
+        <x-button wire:loading.attr="disabled" wire:target="photo">
+            {{ __('Save') }}
+        </x-button>
+    </x-slot>
+</x-action-section>
