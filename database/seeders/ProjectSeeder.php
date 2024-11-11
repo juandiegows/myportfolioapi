@@ -74,5 +74,35 @@ class ProjectSeeder extends Seeder
             'user_id' => 1,
             'project_id' => $project->id
         ]);
+
+        $image = Image::firstOrCreate([
+            'name' => "To do list",
+            'name_spanish' => "Lista por hacer",
+            'link' =>  "img/projects/portfolioAPI/to-do.png",
+            'link_900' => "img/projects/portfolioAPI/to-do.png",
+            'link_700' => "img/projects/portfolioAPI/to-do.png",
+            'link_300' => "img/projects/portfolioAPI/to-do.png",
+        ]);
+
+        $project = Project::firstOrCreate([
+            'client_id' => null,
+            'principal_project_id' =>  null,
+            'front_page_id' => $image->id,
+            'title' => 'to do list',
+            'spanish_title' => 'lista por hacer',
+            'short_description' => 'An application to create a to-do list and mark the task done',
+            'spanish_short_description' => 'Una aplicacion para crear lista de tarea por hacer y marcar la tarea hecho',
+            'description' => '',
+            'spanish_description' => '',
+            'view_link' => 'https://todo.juandiegows.com',
+            'download_link' => 'htthttps://github.com/juandiegows/ToDoListFUAA',
+            'video_link' => null,
+            'date' => '2024-11-11'
+        ]);
+
+        ProjectUser::firstOrCreate([
+            'user_id' => 1,
+            'project_id' => $project->id
+        ]);
     }
 }
