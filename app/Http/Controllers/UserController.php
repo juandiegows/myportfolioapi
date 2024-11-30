@@ -266,7 +266,7 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            return response()->json(new Response($user->social_medias, null));
+            return response()->json(new Response($user->social_medias->where('is_principal', true), null));
         } else {
             $meta = new Meta();
             $meta->code = 404;
