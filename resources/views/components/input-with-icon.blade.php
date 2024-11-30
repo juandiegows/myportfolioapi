@@ -1,8 +1,8 @@
-@props(['disabled' => false,'icon' => null])
+@props(['disabled' => false,'icon' => null, 'placeholder'=> ''])
 
 <div class="flex-1">
     <div class="relative flex items-center">
-        <input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm']) !!}>
+        <input placeholder="{{ $placeholder }}" {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm']) !!}>
 
         <div class="absolute left-4">
             @if ($icon)
@@ -13,5 +13,10 @@
             {{ $slot }}
             @endif
         </div>
+
+
+
+
     </div>
+    <x-input-error class="m-2" :for="$attributes->get('wire:model')" />
 </div>

@@ -78,10 +78,10 @@ class ProjectSeeder extends Seeder
         $image = Image::firstOrCreate([
             'name' => "To do list",
             'name_spanish' => "Lista por hacer",
-            'link' =>  "img/projects/portfolioAPI/to-do.png",
-            'link_900' => "img/projects/portfolioAPI/to-do.png",
-            'link_700' => "img/projects/portfolioAPI/to-do.png",
-            'link_300' => "img/projects/portfolioAPI/to-do.png",
+            'link' =>  "img/projects/todo/to-do.png",
+            'link_900' => "img/projects/todo/to-do.png",
+            'link_700' => "img/projects/todo/to-do.png",
+            'link_300' => "img/projects/todo/to-do.png",
         ]);
 
         $project = Project::firstOrCreate([

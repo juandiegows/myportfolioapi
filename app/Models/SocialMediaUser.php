@@ -44,7 +44,14 @@ use Illuminate\Database\Eloquent\Model;
 class SocialMediaUser extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
+    protected $fillable = [
+        'user_id', 
+        'social_media_id', 
+        'link', 
+        'is_principal'
+    ];
     public function social_media()
     {
         return $this->belongsTo(SocialMedia::class);
