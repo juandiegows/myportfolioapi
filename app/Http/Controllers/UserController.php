@@ -198,7 +198,7 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            return response()->json(new Response($user->services, null));
+            return response()->json(new Response($user->services->where('active', true), null));
         } else {
             $meta = new Meta();
             $meta->code = 404;
@@ -208,6 +208,7 @@ class UserController extends Controller
             return response()->json(new Response($user, $meta), 404);
         }
     }
+    
     /**
      * @OA\Get(
      *     path="/api/user/{user}/social-medias",
