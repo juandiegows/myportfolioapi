@@ -53,6 +53,6 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $casts = ["active" => "boolean"];
 }

@@ -40,6 +40,12 @@
                                 {{ __('Redes') }}
                             </x-dropdown-link>
 
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Administrar Servicios') }}
+                            </div>
+                            <x-dropdown-link href="{{ route('services') }}">
+                                {{ __('Servicios') }}
+                            </x-dropdown-link>
                         </x-slot>
                     </x-dropdown>
                 </div>
