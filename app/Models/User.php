@@ -9,7 +9,75 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-
+/**
+ * @OA\Schema(
+ *     schema="User",
+ *     title="User",
+ *     description="User object",
+ *     @OA\Property(
+ *         property="id",
+ *         type="integer",
+ *         format="int64",
+ *         description="User ID"
+ *     ),
+ *     @OA\Property(
+ *         property="name",
+ *         type="string",
+ *         description="User's name"
+ *     ),
+ *     @OA\Property(
+ *         property="last_name",
+ *         type="string",
+ *         description="User's last name"
+ *     ),
+ *     @OA\Property(
+ *         property="email",
+ *         type="string",
+ *         format="email",
+ *         description="User's email"
+ *     ),
+ *     @OA\Property(
+ *         property="user_name",
+ *         type="string",
+ *         nullable=true,
+ *         description="User's username"
+ *     ),
+ *     @OA\Property(
+ *         property="password",
+ *         type="string",
+ *         nullable=true,
+ *         description="User's password"
+ *     ),
+ *     @OA\Property(
+ *         property="remember_token",
+ *         type="string",
+ *         nullable=true,
+ *         description="User's remember token"
+ *     ),
+ *     @OA\Property(
+ *         property="created_at",
+ *         type="string",
+ *         format="date-time",
+ *         description="Date and time when the user was created"
+ *     ),
+ *     @OA\Property(
+ *         property="updated_at",
+ *         type="string",
+ *         format="date-time",
+ *         description="Date and time when the user was last updated"
+ *     ),
+ *     @OA\Property(
+ *         property="active",
+ *         type="boolean",
+ *         description="Whether the user is active or not"
+ *     ),
+ *     @OA\Property(
+ *         property="is_principal",
+ *         type="boolean",
+ *         description="Whether the user is principal or not"
+ *     ),
+ * )
+ */
 class User extends Authenticatable
 {
     use HasApiTokens;

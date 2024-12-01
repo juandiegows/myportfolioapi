@@ -36,6 +36,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'email' => $input['email'],
             ])->save();
         }
+        flash()->addSuccess("Se ha actualizado la información", "Actualizar perfil");
     }
 
     /**

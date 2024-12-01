@@ -16,10 +16,10 @@ use App\Models\User;
  * @OA\Info(
  *             title="API My Portfolio",
  *             version="1.0",
- *             description="Se usa para el consumo del frontend de mi portafolio"
+ *             description="Se usa para el consumo del frontend de mi portafolio new"
  * )
  *
- * @OA\Server(url="https://api.juandiegows.com")
+ * @OA\Server(url="http://myportfolioapi.test")
  */
 class UserController extends Controller
 {
@@ -68,7 +68,6 @@ class UserController extends Controller
         } catch (\Throwable $th) {
             return response()->json($meta, 500);
         }
-
     }
 
     /**
@@ -77,7 +76,7 @@ class UserController extends Controller
      *     summary="Obtiene los detalles de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
-     *         name="users",
+     *         name="user",
      *         in="path",
      *         description="ID o nombre de usuario del usuario",
      *         required=true,
@@ -144,8 +143,8 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/users/{user}/services",
-     *     summary="Obtiene los servicios que ofrece de un usuario",
+     *     path="/api/user/{user}/services",
+     *     summary="Obtiene los servicios que ofrece un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
      *         name="user",
@@ -211,7 +210,7 @@ class UserController extends Controller
     }
     /**
      * @OA\Get(
-     *     path="/api/users/{user}/socialMedias",
+     *     path="/api/user/{user}/social-medias",
      *     summary="Obtiene las redes sociales de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
@@ -341,7 +340,7 @@ class UserController extends Controller
     }
     /**
      * @OA\Get(
-     *     path="/api/users/{user}/clients",
+     *     path="/api/user/{user}/clients",
      *     summary="Obtiene todos los clientes de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
@@ -402,7 +401,7 @@ class UserController extends Controller
     }
     /**
      * @OA\Get(
-     *     path="/api/users/{user}/skills",
+     *     path="/api/user/{user}/skills",
      *     summary="Obtiene las habilidades de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
@@ -529,7 +528,7 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/users/{user}/educations",
+     *     path="/api/user/{user}/educations",
      *     summary="Obtiene la educación de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(
@@ -571,7 +570,6 @@ class UserController extends Controller
      * )
      */
 
-
     public function educations($user)
     {
         if (is_numeric($user)) {
@@ -594,7 +592,7 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/api/users/{user}/projects",
+     *     path="/api/user/{user}/projects",
      *     summary="Obtiene todos los proyectos de un usuario",
      *     tags={"Users"},
      *     @OA\Parameter(

@@ -2,12 +2,12 @@
     "openapi": "3.0.0",
     "info": {
         "title": "API My Portfolio",
-        "description": "Se usa para el consumo del frontend de mi portafolio",
+        "description": "Se usa para el consumo del frontend de mi portafolio new",
         "version": "1.0"
     },
     "servers": [
         {
-            "url": "https://api.juandiegows.com"
+            "url": "http://myportfolioapi.test"
         }
     ],
     "paths": {
@@ -227,7 +227,7 @@
                 "operationId": "a0fa3a08f20fb611866a52d1bb2e43dd",
                 "parameters": [
                     {
-                        "name": "users",
+                        "name": "user",
                         "in": "path",
                         "description": "ID o nombre de usuario del usuario",
                         "required": true,
@@ -278,13 +278,13 @@
                 }
             }
         },
-        "/api/users/{user}/services": {
+        "/api/user/{user}/services": {
             "get": {
                 "tags": [
                     "Users"
                 ],
-                "summary": "Obtiene los servicios que ofrece de un usuario",
-                "operationId": "d56314ee221ddbddaa2228bc64e88c43",
+                "summary": "Obtiene los servicios que ofrece un usuario",
+                "operationId": "12467e7e578fcaae77389ff48ad37aea",
                 "parameters": [
                     {
                         "name": "user",
@@ -341,13 +341,13 @@
                 }
             }
         },
-        "/api/users/{user}/socialMedias": {
+        "/api/user/{user}/social-medias": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Obtiene las redes sociales de un usuario",
-                "operationId": "13840e257dc8b281b5292d670d5f6752",
+                "operationId": "58e6e5b165ea73d40ac7b4b78eccc21c",
                 "parameters": [
                     {
                         "name": "user",
@@ -462,13 +462,13 @@
                 }
             }
         },
-        "/api/users/{user}/clients": {
+        "/api/user/{user}/clients": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Obtiene todos los clientes de un usuario",
-                "operationId": "a948d2cbeb9c7a0c16c752f1e5c25b52",
+                "operationId": "da83f38bd499f33984a7948b50e6c654",
                 "parameters": [
                     {
                         "name": "user",
@@ -520,13 +520,13 @@
                 }
             }
         },
-        "/api/users/{user}/skills": {
+        "/api/user/{user}/skills": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Obtiene las habilidades de un usuario",
-                "operationId": "db99f6aea8174985e27542327e7a73a9",
+                "operationId": "4273b98f7d3090d396d99e0f620a6232",
                 "parameters": [
                     {
                         "name": "user",
@@ -636,13 +636,13 @@
                 }
             }
         },
-        "/api/users/{user}/educations": {
+        "/api/user/{user}/educations": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Obtiene la educación de un usuario",
-                "operationId": "38256959ea1785560970c9b7df93b1dc",
+                "operationId": "71e0ac0963fa650cd7fa1555864d819b",
                 "parameters": [
                     {
                         "name": "user",
@@ -694,13 +694,13 @@
                 }
             }
         },
-        "/api/users/{user}/projects": {
+        "/api/user/{user}/projects": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Obtiene todos los proyectos de un usuario",
-                "operationId": "5c5bae15cf452da695d34628142b615f",
+                "operationId": "b604028d59f71fb39c2aa5d0c6b3a010",
                 "parameters": [
                     {
                         "name": "user",
