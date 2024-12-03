@@ -95,7 +95,37 @@ class ProjectSeeder extends Seeder
             'description' => '',
             'spanish_description' => '',
             'view_link' => 'https://todo.juandiegows.com',
-            'download_link' => 'htthttps://github.com/juandiegows/ToDoListFUAA',
+            'download_link' => 'https://github.com/juandiegows/ToDoListFUAA',
+            'video_link' => null,
+            'date' => '2024-11-11'
+        ]);
+
+        ProjectUser::firstOrCreate([
+            'user_id' => 1,
+            'project_id' => $project->id
+        ]);
+
+        $image = Image::firstOrCreate([
+            'name' => "To do list",
+            'name_spanish' => "Lista por hacer",
+            'link' =>  "img/projects/manager/manager-veterinary.png",
+            'link_900' => "img/projects/manager/manager-veterinary.png",
+            'link_700' => "img/projects/manager/manager-veterinary.png",
+            'link_300' => "img/projects/manager/manager-veterinary.png",
+        ]);
+
+        $project = Project::firstOrCreate([
+            'client_id' => null,
+            'principal_project_id' =>  null,
+            'front_page_id' => $image->id,
+            'title' => 'Manager Veterinary',
+            'spanish_title' => 'Administrador Veterinaria',
+            'short_description' => 'An application to manage a veterinary clinic, a project done for the Areandina University',
+            'spanish_short_description' => 'Una aplicacion para administrar una veterinaria, proyecto hecho para la universidad Areandina',
+            'description' => '',
+            'spanish_description' => '',
+            'view_link' => 'https://managerveterinaryfuaa.juandiegows.com/',
+            'download_link' => 'https://github.com/juandiegows/ManageVeterinaryFUAA',
             'video_link' => null,
             'date' => '2024-11-11'
         ]);
