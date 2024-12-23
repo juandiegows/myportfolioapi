@@ -25,7 +25,7 @@
             </x-button>
         </div>
     </div>
-    <div class="w-[80%] m-auto">
+    <div class="w-[80%] mx-auto">
         <x-table :headers="['Nombre', 'Descripcion', 'Activo', 'Acciones']">
             @foreach ($services as $serviceItem)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
