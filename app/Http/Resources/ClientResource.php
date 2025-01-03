@@ -80,7 +80,8 @@ class ClientResource extends JsonResource
             "year" => $this->year,
             'topics' => $this->topicsAll()->pluck('name')->toArray(),
             'topics_spanish' => $this->topicsAll()->pluck('spanish_name')->toArray(),
-            'count_participants' => count($this->participants)
+            'count_participants' => count($this->participants),
+            'participants' => $this->participants,
         ];
     }
 }
