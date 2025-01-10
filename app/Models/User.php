@@ -126,6 +126,9 @@ class User extends Authenticatable
         return $this->social_medias()->get();
     }
 
+    public function outstandingAchievements(){
+        return $this->hasMany(OutstandingAchievement::class);
+    }
 
     public function professions()
     {

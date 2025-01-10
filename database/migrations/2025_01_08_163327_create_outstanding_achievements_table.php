@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\OutstandingAchievement;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +19,7 @@ return new class extends Migration
             $table->string('spanish_name');
             $table->string('link')->nullable();
             $table->date('date')->nullable();
+            $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
         });
     }

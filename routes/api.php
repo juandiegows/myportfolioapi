@@ -37,6 +37,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/user/{user}/educations', 'educations');
     Route::get('/user/{user}/projects', 'projects');
     Route::get('/user/{user}/posts', 'posts');
+    Route::get('user/{user}/outstanding-achievements', [UserController::class, 'outstandingAchievements']);
 });
 Route::get('/ip-address', [IpAddressController::class, 'getIpAddress']);
 

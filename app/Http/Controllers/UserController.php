@@ -211,6 +211,75 @@ class UserController extends Controller
 
     /**
      * @OA\Get(
+     *     path="/api/user/{user}/outstanding-achievements",
+     *     summary="Obtiene los logros sobresalientes de un usuario",
+     *     tags={"Users"},
+     *     @OA\Parameter(
+     *         name="user",
+     *         in="path",
+     *         description="ID o nombre de usuario del usuario",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Logros sobresalientes del usuario obtenidos correctamente",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             ),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/OutstandingAchievement")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Usuario no encontrado",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             ),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="object",
+     *                 description="Usuario no encontrado",
+     *                 example="null"
+     *             )
+     *         )
+     *     )
+     * )
+     */
+    public function outstandingAchievements($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::where('id', $user)->first();
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+
+        if ($user) {
+            return response()->json(new Response($user->outstandingAchievements, null));
+        } else {
+            $meta = new Meta();
+            $meta->code = 404;
+            $meta->message = "User not found";
+            $meta->messageSpanish = "usuario no encontrado";
+
+            return response()->json(new Response(null, $meta), 404);
+        }
+    }
+
+    /**
+     * @OA\Get(
      *     path="/api/user/{user}/social-medias",
      *     summary="Obtiene las redes sociales de un usuario",
      *     tags={"Users"},

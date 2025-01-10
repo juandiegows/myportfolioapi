@@ -341,6 +341,69 @@
                 }
             }
         },
+        "/api/user/{user}/outstanding-achievements": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene los logros sobresalientes de un usuario",
+                "operationId": "79d9a84c5ad740867ccddd780b5b8693",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Logros sobresalientes del usuario obtenidos correctamente",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/OutstandingAchievement"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "description": "Usuario no encontrado",
+                                            "type": "object",
+                                            "example": "null"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/user/{user}/social-medias": {
             "get": {
                 "tags": [
@@ -1325,6 +1388,45 @@
                     "messageSpanish": {
                         "description": "Mensaje de la respuesta en español.",
                         "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "OutstandingAchievement": {
+                "title": "Outstanding Achievement",
+                "description": "Outstanding Achievement object representing achievements earned by a user",
+                "properties": {
+                    "id": {
+                        "description": "Unique identifier for the achievement",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "description": "The name of the outstanding achievement",
+                        "type": "string"
+                    },
+                    "spanish_name": {
+                        "description": "The name of the outstanding achievement in Spanish",
+                        "type": "string"
+                    },
+                    "link": {
+                        "description": "URL link related to the achievement",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date when the achievement was earned",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "created_at": {
+                        "description": "Timestamp when the achievement record was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Timestamp when the achievement record was last updated",
+                        "type": "string",
+                        "format": "date-time"
                     }
                 },
                 "type": "object"
