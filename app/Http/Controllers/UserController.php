@@ -267,7 +267,7 @@ class UserController extends Controller
         }
 
         if ($user) {
-            return response()->json(new Response($user->outstandingAchievements, null));
+            return response()->json(new Response(    $user->outstandingAchievements()->orderByDesc('date')->get(), null));
         } else {
             $meta = new Meta();
             $meta->code = 404;
