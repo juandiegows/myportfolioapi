@@ -19,7 +19,7 @@ use App\Models\User;
  *             description="Se usa para el consumo del frontend de mi portafolio new"
  * )
  *
- * @OA\Server(url="http://myportfolioapi.test")
+ * @OA\Server(url="https://api.juandiegows.com")
  */
 class UserController extends Controller
 {
