@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
 
-        User::firstOrCreate([
+        User::insertOrIgnore([
             "name" => "Juan Diego",
             "last_name" => "Mejia Maestre",
             "email" => "mejiamaestrejuandiego@gmail.com",
