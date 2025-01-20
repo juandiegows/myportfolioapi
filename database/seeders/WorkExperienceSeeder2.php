@@ -25,6 +25,7 @@ class WorkExperienceSeeder2 extends Seeder
             ]);
         WorkExperience::find(7)
             ->update([
+                'start_date' => '2023-06-01',
                 'end_date' => '2023-11-30',
             ]);
 
