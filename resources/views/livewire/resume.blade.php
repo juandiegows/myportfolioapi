@@ -129,4 +129,72 @@
         </div>
 
     </div>
+
+    <div class="section-container">
+        <h2 class="title_CV">
+            @if($lang =='es')
+            EDUCACIÓN
+            @else
+            EDUCATION
+            @endif
+        </h2>
+        <div>
+            @foreach ($educations as $education)
+
+            <table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+                <tr>
+                    <td style="width: 75%; text-align: left;">
+                        <p class="other_experience">
+                            @if($lang =='es')
+                            {{ $education->spanish_title_education }}
+                            @else
+                            {{ $education->title_education }}
+                            @endif
+                        </p>
+                    </td>
+                    <td style="width: 25%; text-align: right; font-size: 0.9rem; color: #555;">
+                        <p class="other_experience">
+                            {{ \Carbon\Carbon::parse($education->start_date)->translatedFormat('M Y') }} -
+                            @if($education->end_date)
+                            {{ \Carbon\Carbon::parse($education->end_date)->translatedFormat('M Y') }}
+                            @else
+                            {{ $lang == 'es' ? 'Actual' : 'Present' }}
+                            @endif
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            @endforeach
+        </div>
+
+    </div>
+
+    <div class="section-container">
+        <h2 class="title_CV">
+            @if($lang =='es')
+            ADICCIONAL
+            @else
+            ADDITIONAL
+            @endif
+        </h2>
+        <div>
+            @if($lang =='es')
+            <strong>Idiomas:</strong> Ingles
+            @else
+            <strong>Languages:</strong> English
+
+            @endif
+            {{ $user->english_level }}
+            <span style="margin-left: 20px"></span>
+            @if($lang =='es')
+            <strong>Mi Portafolio:</strong>
+            @else
+            <strong> My Portfolio:</strong>
+
+            @endif
+            <a class="link" href="https://juandiegows.com/" target="_blank">juandiegows.com</a>
+        </div>
+
+    </div>
 </div>
