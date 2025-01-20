@@ -14,6 +14,8 @@ class Resume extends Component
     public $workExperiences;
     public $workExperiencesSecundary;
 
+    public $topics ;
+
     public function mount(User $user, $lang)
     {
         $this->user            = $user;
@@ -28,6 +30,7 @@ class Resume extends Component
 
         $this->workExperiencesSecundary = $user->works->where('is_secundary', true)->sortByDesc('start_date');
         $this->socialMedias             = $user->social_medias()->where('is_principal', true)->get();
+        $this->topics                   = $user->skills;
     }
 
     public function render()

@@ -114,5 +114,19 @@
         @endforeach
     </div>
 
+    <div class="section-container">
+        <h2 class="title_CV">
+            @if($lang =='es')
+            LENGUAJES Y HERRAMIENTAS
+            @else
+            LANGUAGES AND TOOLS
+            @endif
+        </h2>
+        <div>
+            @foreach ($topics as $key => $topic)
+            {{ $topic->name }}{{ $key < count($topics) - 1 ? ',  ' : '.' }}
+            @endforeach
+        </div>
 
+    </div>
 </div>
