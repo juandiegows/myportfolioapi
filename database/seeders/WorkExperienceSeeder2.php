@@ -75,6 +75,32 @@ built web pages using JavaScript with the Vue.js Framework.    <ul>
         ]);
 
         WorkExperience::insertOrIgnore([
+            'id'            => 11,
+            'user_id'       => 1,
+            'profession_id' => 3,
+            'logo'          => null,
+            'business'      => 'MY PORTFOLIO',
+            'is_secundary'  => true,
+            'start_date'    => '2024-03-01',
+            'end_date'      => '2025-03-31',
+            'created_at'    => now(),
+            'updated_at'    => now(),
+        ]);
+
+        WorkExperience::insertOrIgnore([
+            'id'            => 12,
+            'user_id'       => 1,
+            'profession_id' => 11,
+            'logo'          => null,
+            'business'      => 'TEACHING',
+            'is_secundary'  => true,
+            'start_date'    => '2023-03-01',
+            'end_date'      => '2023-12-31',
+            'created_at'    => now(),
+            'updated_at'    => now(),
+        ]);
+
+        WorkExperience::insertOrIgnore([
             'id'                  => 10,
             'user_id'             => 1,
             'parent'              => 6,

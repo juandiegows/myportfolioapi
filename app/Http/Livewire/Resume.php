@@ -12,6 +12,7 @@ class Resume extends Component
     public $lang;
     public $socialMedias;
     public $workExperiences;
+    public $workExperiencesSecundary;
 
     public function mount(User $user, $lang)
     {
@@ -24,7 +25,9 @@ class Resume extends Component
             })
             ->where('is_secundary', false)
             ->whereNull('parent');
-        $this->socialMedias = $user->social_medias()->where('is_principal', true)->get();
+
+        $this->workExperiencesSecundary = $user->works->where('is_secundary', true)->sortByDesc('start_date');
+        $this->socialMedias             = $user->social_medias()->where('is_principal', true)->get();
     }
 
     public function render()

@@ -41,6 +41,26 @@
     text-align: justify !important;
 }
 
+
+.other_experience {
+    padding: 0  ;
+    margin: 0;
+}
+
 .link {
     text-decoration: none;
 }
+
+.page-break {
+    page-break-after: always;
+}
+
+.avoid-break {
+    page-break-inside: avoid;
+}
+
+.experience-container {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+}
+
