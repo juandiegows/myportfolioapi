@@ -121,6 +121,7 @@ class User extends Authenticatable
     {
         return $this->professions()->get();
     }
+    
     public function getSocialMediasAttribute()
     {
         return $this->social_medias()->get();

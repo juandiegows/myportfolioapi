@@ -22,4 +22,17 @@ class WorkExperience extends Model
     {
         return $this->belongsToMany(Topic::class, TopicWorkExperience::class);
     }
+
+        /**
+     * Obtén los temas como atributo adicional.
+     */
+    public function getTopicsAttribute()
+    {
+        // Obtener los temas relacionados con esta experiencia laboral
+        return $this->topics()->get(); // Si deseas devolver todos los registros de la relación
+    }
+
+    public function workExperience(){
+        return $this->hasMany(WorkExperience::class, 'parent', 'id');
+    }
 }

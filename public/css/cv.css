@@ -1,0 +1,46 @@
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middled;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.red {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(16%) sepia(5%) saturate(13%) hue-rotate(4deg) brightness(92%) contrast(85%);
+}
+
+.title_CV{
+    width: 100%;
+    border-bottom: 1px solid #000;  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 100;
+    margin-top: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.paragraph {
+    text-align: justify !important;
+}
+
+.link {
+    text-decoration: none;
+}
