@@ -584,7 +584,9 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            $works = $user->works->sortByDesc('start_date');
+            $works = $user->works  ->sortByDesc(function ($workItem) {
+                return $workItem->end_date ?? now();
+            })->sortByDesc('start_date');
             return response()->json(new Response(WorkResource::collection($works), new Meta(200, "Ok")));
         } else {
             $meta = new Meta();
