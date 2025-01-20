@@ -31,7 +31,7 @@ class WorkExperienceSeeder2 extends Seeder
             WorkExperience::find(7)
             ->update([
                 'start_date' => '2023-04-17',
-                'start_date' => '2023-09-17',
+                'end_date' => '2023-09-17',
             ]);
         WorkExperience::find(2)
             ->update([
