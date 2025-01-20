@@ -13,7 +13,7 @@ class Resume extends Component
     public $socialMedias;
     public $workExperiences;
     public $workExperiencesSecundary;
-    public $topics ;
+    public $topics;
     public $educations;
     public function mount(User $user, $lang)
     {
@@ -53,45 +53,39 @@ class Resume extends Component
 
         return $text;
     }
-
     public function getFormattedDurationText($startDate, $endDate = null)
     {
         $startDate = Carbon::parse($startDate);
         $endDate   = $endDate ? Carbon::parse($endDate) : now();
 
-        // Calcular la diferencia en meses
-        $months = $startDate->diffInMonths($endDate);
+        // Obtener total de días entre las fechas
+        $totalDays = $startDate->diffInDays($endDate);
 
-                                                          // Ajustar si el día del final está cerca del final del mes
-        if ($endDate->day >= $endDate->daysInMonth - 5) { // Ajustar el umbral si es necesario
-            $months++;
-        }
+        // Convertir días a años, meses y días restantes
+        $years         = floor($totalDays / 365);
+        $remainingDays = $totalDays % 365;
+        $months        = floor($remainingDays / 30);
 
-        // Calcular años y meses restantes
-        $years           = intdiv($months, 12);
-        $remainingMonths = $months % 12;
+        // Determinar traducciones según el idioma
+        $yearLabel  = $this->lang == 'es' ? 'Años' : 'Years';
+        $monthLabel = $this->lang == 'es' ? 'Meses' : 'Months';
 
-        // Formato de las fechas
+        // Formatear fechas
         $formattedStartDate = $startDate->translatedFormat('M Y');
-                                                                           // Determinar la traducción de "Actual" según el idioma
-        $actualLabel = $this->lang == 'es' ? __('Actual') : __('Current'); // Ajusta según las traducciones en tu aplicación
+        $formattedEndDate   = $endDate->isToday()
+        ? ($this->lang == 'es' ? 'Actual' : 'Present')
+        : $endDate->translatedFormat('M Y');
 
-        // Si la fecha final es hoy, la muestra como 'Actual' o 'Current' dependiendo del idioma
-        $formattedEndDate = $endDate->isToday() ? $actualLabel : $endDate->translatedFormat('M Y');
-
-        // Determinar las traducciones según el idioma
-        $yearLabel  = $this->lang == 'es' ? __('año') : __('year');
-        $monthLabel = $this->lang == 'es' ? __('mes') : __('month');
-
-        // Formatear la duración con traducción
+        // Construir texto de duración
         $duration = [];
         if ($years > 0) {
-            $duration[] = $years . ' ' . $yearLabel . ($years > 1 ? 's' : '');
+            $duration[] = "$years $yearLabel";
         }
-        if ($remainingMonths > 0) {
-            $duration[] = $remainingMonths . ' ' . $monthLabel . ($remainingMonths > 1 ? ($this->lang == 'es' ? __('es') : __('s')) : '');
+        if ($months > 0) {
+            $duration[] = "$months $monthLabel";
         }
 
         return "{$formattedStartDate} - {$formattedEndDate} (" . implode(' ', $duration) . ")";
     }
+
 }
