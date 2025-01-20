@@ -28,7 +28,11 @@ class WorkExperienceSeeder2 extends Seeder
                 'start_date' => '2023-06-01',
                 'end_date' => '2023-11-30',
             ]);
-
+            WorkExperience::find(7)
+            ->update([
+                'start_date' => '2023-04-17',
+                'start_date' => '2023-09-17',
+            ]);
         WorkExperience::find(2)
             ->update([
                 'is_secundary'        => false,
