@@ -4,31 +4,27 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cross-Origin Resource Sharing (CORS) Configuration
+    | Allowed Origins
     |--------------------------------------------------------------------------
     |
-    | Here you may configure your settings for cross-origin resource sharing
-    | or "CORS". This determines what cross-origin operations may execute
-    | in web browsers. You are free to adjust these settings as needed.
-    |
-    | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+    | Define a list of origins that are allowed to access your API. Use "*" to
+    | allow all origins, or specify an array of specific domains.
     |
     */
+    'paths' => ['api/*'], // Define las rutas que deben aceptar CORS
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'allowed_methods' => ['*'], // Permite todos los métodos (GET, POST, PUT, DELETE, etc.)
 
-    'allowed_methods' => ['*'],
+    'allowed_origins' => ['*'], // Permite todos los orígenes o especifica dominios específicos
 
-    'allowed_origins' => ['*'],
+    'allowed_origins_patterns' => [], // Define patrones (regex) para los orígenes permitidos
 
-    'allowed_origins_patterns' => [],
+    'allowed_headers' => ['*'], // Permite todos los encabezados o define específicos
 
-    'allowed_headers' => ['*'],
+    'exposed_headers' => [], // Encabezados que se pueden exponer al cliente
 
-    'exposed_headers' => [],
+    'max_age' => 0, // Tiempo máximo en segundos para que una solicitud preflight sea válida
 
-    'max_age' => 0,
-
-    'supports_credentials' => false,
-
+    'supports_credentials' => false, // Si las solicitudes CORS deben permitir credenciales (cookies)
 ];
+
