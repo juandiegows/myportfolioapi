@@ -26,6 +26,7 @@ Route::middleware([
 Route::get('/resume/{lang}/{userIdUserName}/preview', function($lang, $userIdUserName){
 
     $user = User::where('user_name', $userIdUserName)->orWhere('id', $userIdUserName)->first();  
+ 
     $options = [
         'isHtml5ParserEnabled' => true,
         'isRemoteEnabled' => true,
@@ -35,9 +36,29 @@ Route::get('/resume/{lang}/{userIdUserName}/preview', function($lang, $userIdUse
     
     $pdf = PDF::loadView('reports.CV', ['user' => $user, 'lang' => $lang], $options);
     $pdf->setPaper(array(0, 0, 650, 970), 'portrait');
-    return $pdf->stream('preview.pdf');
+    return $pdf->stream('JuanDiegoWS.'.$lang.'.pdf');
 
 })->name('resume.preview');
+
+
+Route::get('/resume/{lang}/{userIdUserName}/download', function($lang, $userIdUserName){
+
+    $user = User::where('user_name', $userIdUserName)->orWhere('id', $userIdUserName)->first();  
+
+    $options = [
+        'isHtml5ParserEnabled' => true,
+        'isRemoteEnabled' => true,
+        'dpi' => 150,
+        'defaultFont' => 'Arial'
+    ];
+    
+    $pdf = PDF::loadView('reports.CV', ['user' => $user, 'lang' => $lang], $options);
+    $pdf->setPaper(array(0, 0, 650, 970), 'portrait');
+    
+    // Cambiar stream a download para que el PDF se descargue
+    return $pdf->download('JuanDiegoWS.'.$lang.'.pdf');
+
+})->name('resume.download');
 
 Route::get('/resume/{lang}/{userIdUserName}/view', function($lang, $userIdUserName){
 
