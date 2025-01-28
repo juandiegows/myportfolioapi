@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\IpAddressController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\IpAddressController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\ServiceController;
@@ -13,7 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\WorkExperienceController;
 use Illuminate\Support\Facades\Route;
-use OpenApi\Generator as OpenApiGenerator;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,6 +34,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/user/{user}/clients', 'clients');
     Route::get('/user/{user}/skills', 'skills');
     Route::get('/user/{user}/works', 'works');
+    Route::get('/user/{user}/events', 'events');
     Route::get('/user/{user}/educations', 'educations');
     Route::get('/user/{user}/projects', 'projects');
     Route::get('/user/{user}/posts', 'posts');
@@ -67,7 +68,6 @@ Route::controller(ClientController::class)->group(function () {
 Route::controller(TopicController::class)->group(function () {
     Route::get('topics', 'index');
 });
-
 
 Route::controller(WorkExperienceController::class)->group(function () {
     Route::get('work-experiences', 'index');

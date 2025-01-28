@@ -5,11 +5,6 @@
         "description": "Se usa para el consumo del frontend de mi portafolio new",
         "version": "1.0"
     },
-    "servers": [
-        {
-            "url": "https://api.juandiegows.com"
-        }
-    ],
     "paths": {
         "/api/ip-address": {
             "get": {
@@ -699,6 +694,64 @@
                 }
             }
         },
+        "/api/user/{user}/events": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Obtiene todos los eventos de un usuario",
+                "operationId": "84de5fee0cc89931cece30c54be9fd96",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "ID o nombre de usuario del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Event"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "meta": {
+                                            "$ref": "#/components/schemas/Meta"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/user/{user}/educations": {
             "get": {
                 "tags": [
@@ -1348,6 +1401,65 @@
                 },
                 "type": "object"
             },
+            "Event": {
+                "title": "Event",
+                "description": "Event object",
+                "properties": {
+                    "id": {
+                        "description": "Event ID",
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "date": {
+                        "description": "Event date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "title": {
+                        "description": "Event title in English",
+                        "type": "string"
+                    },
+                    "spanish_title": {
+                        "description": "Event title in Spanish",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Event description in English",
+                        "type": "string"
+                    },
+                    "spanish_description": {
+                        "description": "Event description in Spanish",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL associated with the event (image or link)",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Type of content (e.g., image, video)",
+                        "type": "string"
+                    },
+                    "is_initial": {
+                        "description": "Indicates whether the event is initial",
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "description": "Date and time when the event was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Date and time when the event was last updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "url_full": {
+                        "description": "Complete URL generated from the base URL and the event's URL",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "Message": {
                 "title": "Message",
                 "description": "Modelo para almacenar un mensaje",
@@ -1654,5 +1766,23 @@
                 "type": "object"
             }
         }
-    }
+    },
+    "tags": [
+        {
+            "name": "IP Address",
+            "description": "IP Address"
+        },
+        {
+            "name": "Messages",
+            "description": "Messages"
+        },
+        {
+            "name": "Users",
+            "description": "Users"
+        },
+        {
+            "name": "Visits",
+            "description": "Visits"
+        }
+    ]
 }

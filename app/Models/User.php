@@ -165,6 +165,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Client::class, Participant::class);
     }
 
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
     public function works()
     {
         return $this->hasMany(WorkExperience::class);

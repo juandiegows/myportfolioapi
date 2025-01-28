@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ClientResource;
@@ -19,7 +18,7 @@ use App\Models\User;
  *             description="Se usa para el consumo del frontend de mi portafolio new"
  * )
  *
- * @OA\Server(url="https://api.juandiegows.com")
+ *
  */
 class UserController extends Controller
 {
@@ -60,9 +59,9 @@ class UserController extends Controller
     public function index()
     {
         try {
-            $meta = new Meta();
-            $meta->code = 200;
-            $meta->message = "OK";
+            $meta                 = new Meta();
+            $meta->code           = 200;
+            $meta->message        = "OK";
             $meta->messageSpanish = "OK";
             return response()->json(new Response(User::get(), $meta));
         } catch (\Throwable $th) {
@@ -126,15 +125,15 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            $meta = new Meta();
-            $meta->code = 200;
-            $meta->message = "OK";
+            $meta                 = new Meta();
+            $meta->code           = 200;
+            $meta->message        = "OK";
             $meta->messageSpanish = "OK";
             return response()->json(new Response($user, $meta));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
@@ -200,9 +199,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response($user->services()->where('active', true)->get(), null));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
@@ -267,11 +266,11 @@ class UserController extends Controller
         }
 
         if ($user) {
-            return response()->json(new Response(    $user->outstandingAchievements()->orderByDesc('date')->get(), null));
+            return response()->json(new Response($user->outstandingAchievements()->orderByDesc('date')->get(), null));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
@@ -337,9 +336,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response($user->social_medias()->where('is_principal', true), null));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
@@ -400,9 +399,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response($user->professions, null));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response($user, $meta), 404);
@@ -461,9 +460,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response(ClientResource::collection($user->clients), new Meta(200, "Ok")));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
@@ -523,9 +522,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response(TopicResource::collection($user->skills), new Meta(200, "Ok")));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
@@ -584,15 +583,89 @@ class UserController extends Controller
             $user = User::where('user_name', $user)->first();
         }
         if ($user) {
-            $works = $user->works  ->sortByDesc(function ($workItem) {
+            $works = $user->works->sortByDesc(function ($workItem) {
                 return $workItem->end_date ?? now();
             })->sortByDesc('start_date');
             return response()->json(new Response(WorkResource::collection($works), new Meta(200, "Ok")));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
+
+            return response()->json(new Response(null, $meta), 404);
+        }
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/api/user/{user}/events",
+     *     summary="Obtiene todos los eventos de un usuario",
+     *     tags={"Users"},
+     *     @OA\Parameter(
+     *         name="user",
+     *         in="path",
+     *         required=true,
+     *         description="ID o nombre de usuario del usuario",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             ),
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/Event")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="User not found",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="meta",
+     *                 ref="#/components/schemas/Meta"
+     *             )
+     *         )
+     *     )
+     * )
+     */
+    public function events($user)
+    {
+        if (is_numeric($user)) {
+            $user = User::find($user);
+        } elseif (is_string($user)) {
+            $user = User::where('user_name', $user)->first();
+        }
+
+        if ($user) {
+            $events = $user->events()->orderBy('date')->get();
+
+            if ($events->isEmpty()) {
+                $meta                 = new Meta();
+                $meta->code           = 404;
+                $meta->message        = "No events found for this user";
+                $meta->messageSpanish = "No se encontraron eventos para este usuario";
+
+                return response()->json(new Response(null, $meta), 404);
+            }
+
+            return response()->json(new Response($events, new Meta(200, "Ok")));
+        } else {
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
+            $meta->messageSpanish = "Usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
         }
@@ -653,9 +726,9 @@ class UserController extends Controller
             $educations = $user->educations->sortByDesc('start_date');
             return response()->json(new Response(EducationResource::collection($educations), new Meta(200, "Ok")));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
@@ -716,9 +789,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response(ProjectResource::collection($user->projects), new Meta(200, "Ok")));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
@@ -779,9 +852,9 @@ class UserController extends Controller
         if ($user) {
             return response()->json(new Response(PostResource::collection($user->posts), new Meta(200, "Ok")));
         } else {
-            $meta = new Meta();
-            $meta->code = 404;
-            $meta->message = "User not found";
+            $meta                 = new Meta();
+            $meta->code           = 404;
+            $meta->message        = "User not found";
             $meta->messageSpanish = "usuario no encontrado";
 
             return response()->json(new Response(null, $meta), 404);
