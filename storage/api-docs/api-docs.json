@@ -1253,6 +1253,13 @@
                         "description": "Descripción detallada del proyecto en español",
                         "type": "string"
                     },
+                    "topics": {
+                        "description": "Temas del proyecto",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/TopicResource"
+                        }
+                    },
                     "view_link": {
                         "description": "Enlace de visualización del proyecto",
                         "type": "string"
