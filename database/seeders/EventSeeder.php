@@ -93,7 +93,7 @@ class EventSeeder extends Seeder
                 'spanish_description' => 'El equipo de Colombia viajó a Corea del Sur para un entrenamiento. Fueron dos semanas donde intercambiamos conocimientos y cultura. Tuve la oportunidad de conocer la empresa Samsung, que parecía una mini ciudad, la ciudad de Samsung. También aprovechamos para visitar algunos lugares, entre ellos el museo de guerra y otros lugares cuyos nombres no recuerdo.',
                 'description'         => 'The Colombian team traveled to South Korea for training. It was two weeks where we exchanged knowledge and culture. I had the opportunity to visit Samsung, which felt like a mini city, the Samsung City. We also took the chance to visit some places, including the War Museum and other locations whose names I can’t recall.',
                 'url'                 => 'img/events/Seoul Corea del Sur-JuanDiegoWS.webp',
-                'type'                => 'text',
+                'type'                => 'image',
                 'is_initial'          => false,
                 'created_at'          => now(),
                 'updated_at'          => now(),
