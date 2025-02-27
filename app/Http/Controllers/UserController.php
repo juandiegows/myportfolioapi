@@ -13,13 +13,20 @@ use App\Models\User;
 
 /**
  * @OA\Info(
- *             title="API My Portfolio",
- *             version="1.0",
- *             description="Se usa para el consumo del frontend de mi portafolio new"
+ *     title="API My Portfolio",
+ *     version="1.0.0",
+ *     description="Se usa para el consumo del frontend de mi portafolio new",
+ *     @OA\Contact(
+ *         email="mejiamaestrejuandiego@gmail.com",
+ *         name="JuanDiegoWS"
+ *     ),
+ *     @OA\License(
+ *         name="MIT",
+ *         url="https://opensource.org/licenses/MIT"
+ *     )
  * )
- *
- *
  */
+
 class UserController extends Controller
 {
     /**

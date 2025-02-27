@@ -3,7 +3,15 @@
     "info": {
         "title": "API My Portfolio",
         "description": "Se usa para el consumo del frontend de mi portafolio new",
-        "version": "1.0"
+        "contact": {
+            "name": "JuanDiegoWS",
+            "email": "mejiamaestrejuandiego@gmail.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0.0"
     },
     "paths": {
         "/api/ip-address": {
@@ -57,13 +65,13 @@
                 }
             }
         },
-        "/api/messages": {
+        "/api/message": {
             "post": {
                 "tags": [
                     "Messages"
                 ],
                 "summary": "Almacena un nuevo mensaje",
-                "operationId": "db79bb7bcadfdb708e9f6c38ac928f4a",
+                "operationId": "ee15771b1dadd0efb04ebd263be4f168",
                 "requestBody": {
                     "description": "Datos del mensaje a almacenar",
                     "required": true,
@@ -74,7 +82,8 @@
                                     "name",
                                     "subject",
                                     "email",
-                                    "message"
+                                    "message",
+                                    "captcha_token"
                                 ],
                                 "properties": {
                                     "name": {
@@ -88,6 +97,9 @@
                                         "format": "email"
                                     },
                                     "message": {
+                                        "type": "string"
+                                    },
+                                    "captcha_token": {
                                         "type": "string"
                                     }
                                 },
@@ -125,7 +137,6 @@
                                             "$ref": "#/components/schemas/Meta"
                                         },
                                         "errors": {
-                                            "description": "Objeto conteniendo errores de validación",
                                             "type": "object"
                                         }
                                     },
@@ -146,11 +157,9 @@
                                         "data": {
                                             "properties": {
                                                 "message": {
-                                                    "description": "Mensaje de error",
                                                     "type": "string"
                                                 },
                                                 "date": {
-                                                    "description": "Fecha y hora del error",
                                                     "type": "string",
                                                     "format": "date-time"
                                                 }
