@@ -4,10 +4,12 @@ return [
     'paths' => ['*'], // Permite todas las rutas
     'allowed_methods' => ['*'], // Permite todos los métodos HTTP (GET, POST, PUT, DELETE, etc.)
     'allowed_origins' => [
-        'http://localhost',          // Permite localhost sin puerto específico
-        'http://localhost:4200',     // Ejemplo con puerto (React, Vue, Angular dev servers)
-        'https://juandiegows.com',   // Permite dominio en producción
-        'https://www.juandiegows.com' // Permite con 'www' si es necesario
+        'http://localhost',         
+        'http://localhost:4200', 
+        'https://juandiegows.com',   
+        'https://www.juandiegows.com' ,
+        'https://codigolimpio.com.co' ,
+        'https://www.codigolimpio.com.co' ,
     ],
     'allowed_origins_patterns' => [], // No es necesario usar patrones dinámicos
     'allowed_headers' => ['*'], // Permite todas las cabeceras
